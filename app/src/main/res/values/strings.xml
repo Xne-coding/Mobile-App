@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuestLearn</string>
+    <string name="tagline">Explore. Learn. Connect.</string>
+
+    <!-- Onboarding -->
+    <string name="onb_title_1">Explore Your Campus</string>
+    <string name="onb_desc_1">Discover hidden gems and iconic landmarks around your university. Navigate with real-time GPS and interactive maps.</string>
+    <string name="onb_title_2">Complete Challenges</string>
+    <string name="onb_desc_2">Scan QR codes, check in at beacons, and complete fun learning missions to earn XP and unlock achievements.</string>
+    <string name="onb_title_3">Compete with Friends</string>
+    <string name="onb_desc_3">Climb the leaderboard, show off your badges, and race friends to discover the whole campus first.</string>
+
+    <!-- Login -->
+    <string name="sign_in_sso">Sign in with University SSO</string>
+    <string name="continue_guest">Continue as Guest</string>
+    <string name="university_email">University Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in">Sign In Securely</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started 🚀</string>
+
+    <!-- Nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Misc -->
+    <string name="xp_format">%1$d XP</string>
+    <string name="level_format">Level %1$d · %2$s</string>
+    <string name="rank_format">#%1$d</string>
+    <string name="distance_format">%1$dm away</string>
+</resources>
