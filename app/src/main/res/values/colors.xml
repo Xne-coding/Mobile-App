@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="blue_primary">#2196F3</color>
+    <color name="blue_dark">#1565C0</color>
+    <color name="blue_light">#BBDEFB</color>
+    <color name="blue_surface">#E3F2FD</color>
+    <color name="green_primary">#4CAF50</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_light">#C8E6C9</color>
+    <color name="orange_primary">#FF9800</color>
+    <color name="orange_light">#FFE0B2</color>
+    <color name="red_primary">#F44336</color>
+
+    <!-- Neutral -->
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- MD3 Seeds -->
+    <color name="md_theme_light_primary">#2196F3</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#E3F2FD</color>
+    <color name="md_theme_light_secondary">#4CAF50</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_background">#FAFAFA</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_onSurface">#212121</color>
+    <color name="md_theme_light_outline">#E0E0E0</color>
+</resources>
