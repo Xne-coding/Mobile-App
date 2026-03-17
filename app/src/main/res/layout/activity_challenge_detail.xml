@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey_50">
+
+    <!-- Hero Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_blue_gradient"
+        android:paddingBottom="24dp"
+        android:clipChildren="false">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:imageTintList="@color/white"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Challenge Details"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#E6FFFFFF"
+                android:fontFamily="sans-serif" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_person"
+                android:imageTintList="@android:color/white"
+                android:contentDescription="Favourite" />
+
+        </LinearLayout>
+
+        <!-- Badge icon -->
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_challenge_badge">
+
+            <TextView
+                android:id="@+id/tvChallengeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="📚"
+                android:textSize="36sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvChallengeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:text="Library Quest:\nArchives Deep Dive"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvChallengeOrg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="🏛️ Hallward Library · History Dept."
+            android:textSize="12sp"
+            android:textColor="#BFFFFFFF"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Chips row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📡 QR Scan"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_hero_chip"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvXpChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ 150 XP"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_hero_chip"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏱ 45 min"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_hero_chip"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <!-- About section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABOUT"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_500"
+                    android:letterSpacing="0.07"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Explore the hidden archives of Hallward Library and discover fascinating historical records from the university's founding in 1881. Scan QR codes at 4 key locations to unlock clues and complete the trail."
+                    android:textSize="14sp"
+                    android:textColor="@color/grey_700"
+                    android:lineSpacingMultiplier="1.6" />
+
+            </LinearLayout>
+
+            <!-- Steps section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STEPS"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_500"
+                    android:letterSpacing="0.07"
+                    android:layout_marginBottom="12dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+            </LinearLayout>
+
+            <!-- Location section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOCATION"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_500"
+                    android:letterSpacing="0.07"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Mini map placeholder -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/miniMapCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+
+                    <com.questlearn.MiniMapView
+                        android:id="@+id/miniMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tvOpenMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_margin="8dp"
+                        android:text="Open Map →"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_primary"
+                        android:background="@drawable/bg_white_rounded"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:elevation="4dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="📍 Hallward Library, University Park · 80m away"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey_500" />
+
+            </LinearLayout>
+
+            <!-- Rewards section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REWARDS"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_500"
+                    android:letterSpacing="0.07"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚡" android:textSize="24sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="150" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/grey_900" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="XP POINTS" android:textSize="9sp" android:textColor="@color/grey_500" android:letterSpacing="0.05" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏅" android:textSize="24sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/grey_900" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BADGE" android:textSize="9sp" android:textColor="@color/grey_500" android:letterSpacing="0.05" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardElevation="2dp"
+                        app:cardCornerRadius="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔥" android:textSize="24sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+1" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/grey_900" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="STREAK" android:textSize="9sp" android:textColor="@color/grey_500" android:letterSpacing="0.05" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- CTA Button (pinned) -->
+    <Button
+        android:id="@+id/btnBeginChallenge"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="📷  Scan Next QR Code"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/green_primary"
+        android:fontFamily="sans-serif"
+        app:cornerRadius="28dp" />
+
+</LinearLayout>
