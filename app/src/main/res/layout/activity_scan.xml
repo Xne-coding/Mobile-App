@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#111111">
+
+    <!-- Dark header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="#1A1A1A">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:imageTintList="@android:color/white"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Scan"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto" />
+
+        <FrameLayout
+            android:id="@+id/btnFlash"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_flash_btn">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_flash"
+                android:contentDescription="Flash toggle" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Camera preview area -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1A1A1A">
+
+        <!-- Simulated camera texture / real: replace with PreviewView -->
+        <android.view.View
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- Placeholder dark bg when camera not active -->
+        <View
+            android:id="@+id/cameraBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#222222" />
+
+        <!-- QR Frame overlay -->
+        <com.questlearn.QrOverlayView
+            android:id="@+id/qrOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Hint text -->
+        <TextView
+            android:id="@+id/tvScanHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="24dp"
+            android:text="Point camera at a QR code or beacon"
+            android:textSize="13sp"
+            android:textColor="#99FFFFFF"
+            android:fontFamily="@font/roboto" />
+
+    </FrameLayout>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="24dp"
+        android:background="#111111">
+
+        <!-- Mode chips -->
+        <LinearLayout
+            android:id="@+id/modeChipsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:id="@+id/chipQr"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:paddingHorizontal="16dp"
+                android:gravity="center"
+                android:text="QR Code"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_scan_chip_active" />
+
+            <TextView
+                android:id="@+id/chipBarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:paddingHorizontal="16dp"
+                android:gravity="center"
+                android:text="Barcode"
+                android:textSize="12sp"
+                android:textColor="#A6FFFFFF"
+                android:background="@drawable/bg_scan_chip_inactive" />
+
+            <TextView
+                android:id="@+id/chipNfc"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingHorizontal="16dp"
+                android:gravity="center"
+                android:text="NFC"
+                android:textSize="12sp"
+                android:textColor="#A6FFFFFF"
+                android:background="@drawable/bg_scan_chip_inactive" />
+
+        </LinearLayout>
+
+        <!-- Manual entry button -->
+        <Button
+            android:id="@+id/btnManualEntry"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Enter Code Manually"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="@drawable/bg_manual_btn"
+            android:fontFamily="@font/roboto" />
+
+    </LinearLayout>
+
+</LinearLayout>
