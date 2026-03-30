@@ -17,6 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuestLearn">
 
+        <!-- Replace MAPS_API_KEY in gradle.properties with your key from Google Cloud Console -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -34,6 +39,12 @@
             android:theme="@style/Theme.QuestLearn" />
 
         <activity android:name=".SsoLoginActivity"
+            android:theme="@style/Theme.QuestLearn" />
+
+        <activity android:name=".CreateAccountActivity"
+            android:theme="@style/Theme.QuestLearn" />
+
+        <activity android:name=".ChangePasswordActivity"
             android:theme="@style/Theme.QuestLearn" />
 
         <activity android:name=".MainActivity"
