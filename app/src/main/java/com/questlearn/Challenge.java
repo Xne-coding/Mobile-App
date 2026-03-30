@@ -36,12 +36,12 @@ public class Challenge {
     // Sample data factory
     public static java.util.List<Challenge> getSampleData() {
         java.util.List<Challenge> list = new java.util.ArrayList<>();
-        list.add(new Challenge("ch1", "Library Quest: Archives Deep Dive",
-                "📍 Hallward Library", 80, 150, 65, AccentColor.BLUE, "📚"));
-        list.add(new Challenge("ch2", "Science Trail: Lab Discovery",
-                "📍 Physics Building", 340, 200, 30, AccentColor.GREEN, "⚗️"));
-        list.add(new Challenge("ch3", "Heritage Walk: Historic Trent Building",
-                "📍 University Park", 120, 100, 90, AccentColor.ORANGE, "🏛️"));
+        list.add(new Challenge("ch1", "Clifton Quest: Library Discovery",
+                "Clifton Library", 80, 150, 65, AccentColor.BLUE, "📚"));
+        list.add(new Challenge("ch2", "Science Trail: Erasmus Labs",
+                "Erasmus Darwin Building", 220, 200, 30, AccentColor.GREEN, "⚗️"));
+        list.add(new Challenge("ch3", "Sports Route: Clifton Sports Centre",
+                "Clifton Sports Village", 340, 100, 90, AccentColor.ORANGE, "🏟️"));
         return list;
     }
 }
