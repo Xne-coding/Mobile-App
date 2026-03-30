@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +24,12 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         // Back button
         ImageButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> {
-            onBackPressed();
+            try {
+                finish();
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            } catch (Exception e) {
+                Toast.makeText(this, "Unable to go back.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Load challenge data (uses first item for demo; extend for full ID lookup)
@@ -35,24 +41,35 @@ public class ChallengeDetailActivity extends AppCompatActivity {
             bindChallenge(challenge);
         }
 
-        // CTA → Scan
+        // CTA → Scan (pass challenge XP so ScanActivity can update progress on success)
         Button btnBegin = findViewById(R.id.btnBeginChallenge);
         btnBegin.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ScanActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            try {
+                Intent intent = new Intent(this, ScanActivity.class);
+                if (challenge != null) {
+                    intent.putExtra(ScanActivity.EXTRA_CHALLENGE_XP, challenge.getXpPoints());
+                    intent.putExtra(ScanActivity.EXTRA_CHALLENGE_ID, challenge.getId());
+                }
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            } catch (Exception e) {
+                Toast.makeText(this, "Unable to open scanner.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Open map
         TextView tvOpenMap = findViewById(R.id.tvOpenMap);
         if (tvOpenMap != null) {
             tvOpenMap.setOnClickListener(v -> {
-                // Navigate back to MainActivity and switch to Map tab
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("open_tab", R.id.nav_map);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                try {
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("open_tab", R.id.mapFragment);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                } catch (Exception e) {
+                    Toast.makeText(this, "Unable to open map.", Toast.LENGTH_SHORT).show();
+                }
             });
         }
 
@@ -79,7 +96,7 @@ public class ChallengeDetailActivity extends AppCompatActivity {
 
         if (tvIcon != null) tvIcon.setText(challenge.getIcon());
         if (tvName != null) tvName.setText(challenge.getName());
-        if (tvOrg  != null) tvOrg.setText("🏛️ " + challenge.getLocation() + " · History Dept.");
+        if (tvOrg  != null) tvOrg.setText("🏛️ " + challenge.getLocation() + " · NTU Clifton");
         if (tvXp   != null) tvXp.setText("⚡ " + challenge.getXpPoints() + " XP");
     }
 
@@ -95,9 +112,9 @@ public class ChallengeDetailActivity extends AppCompatActivity {
     private List<ChallengeStep> getSampleSteps() {
         return Arrays.asList(
                 new ChallengeStep(1, "Find the main entrance information board", true),
-                new ChallengeStep(2, "Locate the Special Collections floor (Level 3)", true),
-                new ChallengeStep(3, "Scan the QR code near the 1881 Founders' Exhibition", false),
-                new ChallengeStep(4, "Answer the trivia question in the app", false)
+                new ChallengeStep(2, "Head to the Clifton Library welcome desk", true),
+                new ChallengeStep(3, "Scan the QR code near the study hub", false),
+                new ChallengeStep(4, "Answer the NTU Clifton trivia question", false)
         );
     }
 
