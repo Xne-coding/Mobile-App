@@ -8,12 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.questlearn.db.ProgressDbHelper;
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
@@ -32,7 +35,9 @@ public class HomeFragment extends Fragment {
         // Load user prefs
         SharedPreferences prefs = requireActivity()
                 .getSharedPreferences("questlearn_prefs", 0);
-        String userName = prefs.getString("user_name", "Explorer");
+        ProgressDbHelper progressDbHelper = new ProgressDbHelper(requireContext());
+        ProgressDbHelper.ProgressData progress = progressDbHelper.getProgress();
+        String userName = prefs.getString("user_name", "NTU Student");
 
         // User name
         TextView tvName = view.findViewById(R.id.tvUserName);
@@ -45,42 +50,62 @@ public class HomeFragment extends Fragment {
 
         // Avatar tap → profile
         View avatarContainer = view.findViewById(R.id.avatarContainer);
-        avatarContainer.setOnClickListener(v ->
-                Navigation.findNavController(view).navigate(R.id.profileFragment));
+        avatarContainer.setOnClickListener(v -> {
+            try {
+                Navigation.findNavController(view).navigate(R.id.profileFragment);
+            } catch (Exception e) {
+                Toast.makeText(requireContext(), "Unable to open profile.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Stat cards
-        setupStatCards(view);
+        setupStatCards(view, progress);
 
         // See map link
         TextView tvSeeMap = view.findViewById(R.id.tvSeeMap);
-        tvSeeMap.setOnClickListener(v ->
-                Navigation.findNavController(view).navigate(R.id.mapFragment));
+        tvSeeMap.setOnClickListener(v -> {
+            try {
+                Navigation.findNavController(view).navigate(R.id.mapFragment);
+            } catch (Exception e) {
+                Toast.makeText(requireContext(), "Unable to open map.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Challenges RecyclerView
         RecyclerView rvChallenges = view.findViewById(R.id.rvChallenges);
         rvChallenges.setLayoutManager(new LinearLayoutManager(requireContext()));
-        rvChallenges.setAdapter(new ChallengeAdapter(Challenge.getSampleData()));
+        rvChallenges.setAdapter(new ChallengeAdapter(new ArrayList<>()));
         rvChallenges.setNestedScrollingEnabled(false);
 
         // Leaderboard RecyclerView
         RecyclerView rvLeaderboard = view.findViewById(R.id.rvLeaderboard);
         rvLeaderboard.setLayoutManager(new LinearLayoutManager(requireContext()));
-        rvLeaderboard.setAdapter(new LeaderboardAdapter(LeaderboardEntry.getSampleData()));
+        rvLeaderboard.setAdapter(new LeaderboardAdapter(new ArrayList<>()));
         rvLeaderboard.setNestedScrollingEnabled(false);
 
-        // Animate XP bar
+        // XP progress bar (0–100 scale)
         ProgressBar xpBar = view.findViewById(R.id.xpProgressBar);
-        xpBar.setProgress(0);
-        xpBar.postDelayed(() -> animateProgress(xpBar, 83), 400);
+        int pct = progress.xpTarget > 0 ? (progress.xp * 100) / progress.xpTarget : 0;
+        xpBar.setProgress(Math.min(pct, 100));
+
+        TextView tvLevelLabel = view.findViewById(R.id.tvLevelLabel);
+        if (tvLevelLabel != null) {
+            tvLevelLabel.setText("Level " + progress.level + " · Beginner");
+        }
+
+        TextView tvXpSummary = view.findViewById(R.id.tvXpSummary);
+        if (tvXpSummary != null) {
+            tvXpSummary.setText(progress.xp + " / " + progress.xpTarget + " XP");
+        }
     }
 
-    private void setupStatCards(View view) {
+    private void setupStatCards(View view, ProgressDbHelper.ProgressData progress) {
         // XP stat
         View statXp = view.findViewById(R.id.statXp);
         if (statXp != null) {
             TextView val = statXp.findViewById(R.id.tvStatValue);
             TextView lbl = statXp.findViewById(R.id.tvStatLabel);
-            if (val != null) val.setText("1,240");
+            if (val != null) val.setText(String.valueOf(progress.xp));
             if (lbl != null) lbl.setText("XP POINTS");
         }
 
@@ -89,7 +114,7 @@ public class HomeFragment extends Fragment {
         if (statCh != null) {
             TextView val = statCh.findViewById(R.id.tvStatValue);
             TextView lbl = statCh.findViewById(R.id.tvStatLabel);
-            if (val != null) val.setText("18");
+            if (val != null) val.setText(String.valueOf(progress.challengesDone));
             if (lbl != null) lbl.setText("CHALLENGES");
         }
 
@@ -98,7 +123,7 @@ public class HomeFragment extends Fragment {
         if (statRank != null) {
             TextView val = statRank.findViewById(R.id.tvStatValue);
             TextView lbl = statRank.findViewById(R.id.tvStatLabel);
-            if (val != null) val.setText("#4");
+            if (val != null) val.setText("#" + progress.rankValue);
             if (lbl != null) lbl.setText("RANK");
         }
 
@@ -107,16 +132,8 @@ public class HomeFragment extends Fragment {
         if (statStreak != null) {
             TextView val = statStreak.findViewById(R.id.tvStatValue);
             TextView lbl = statStreak.findViewById(R.id.tvStatLabel);
-            if (val != null) val.setText("7🔥");
+            if (val != null) val.setText(String.valueOf(progress.streak));
             if (lbl != null) lbl.setText("STREAK");
         }
-    }
-
-    private void animateProgress(ProgressBar bar, int targetProgress) {
-        android.animation.ObjectAnimator animator = android.animation.ObjectAnimator
-                .ofInt(bar, "progress", 0, targetProgress);
-        animator.setDuration(800);
-        animator.setInterpolator(new android.view.animation.DecelerateInterpolator());
-        animator.start();
     }
 }
