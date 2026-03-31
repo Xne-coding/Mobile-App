@@ -10,6 +10,7 @@ import android.os.Looper;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import androidx.appcompat.app.AppCompatActivity;
+import com.questlearn.db.ProgressDbHelper;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -68,6 +69,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void navigateNext() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        sanitizeLegacyDemoUser(prefs);
         boolean onboardingDone = prefs.getBoolean(KEY_ONBOARDING_DONE, false);
         boolean loggedIn = prefs.getBoolean(KEY_LOGGED_IN, false);
 
@@ -83,5 +85,22 @@ public class SplashActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         finish();
+    }
+
+    private void sanitizeLegacyDemoUser(SharedPreferences prefs) {
+        String legacyName = prefs.getString("user_name", "");
+        String legacyEmail = prefs.getString("user_email", "");
+        if ("Don Jacques Maseengo".equals(legacyName)
+                || legacyEmail.endsWith("@nottingham.ac.uk")) {
+            prefs.edit()
+                    .putBoolean(KEY_LOGGED_IN, false)
+                    .remove("remember_me")
+                    .remove("user_name")
+                    .remove("user_initials")
+                    .remove("user_email")
+                    .remove("is_guest")
+                    .apply();
+            new ProgressDbHelper(this).resetProgress();
+        }
     }
 }
