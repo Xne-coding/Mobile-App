@@ -7,11 +7,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.questlearn.db.ProgressDbHelper;
 
 public class ScanActivity extends AppCompatActivity {
 
+    public static final String EXTRA_CHALLENGE_XP = "challenge_xp";
+    public static final String EXTRA_CHALLENGE_ID = "challenge_id";
+
     private boolean flashOn = false;
     private TextView activeChip = null;
+    private boolean scanHandled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +26,21 @@ public class ScanActivity extends AppCompatActivity {
         // Back button
         ImageButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> {
-            onBackPressed();
+            try {
+                onBackPressed();
+            } catch (Exception e) {
+                Toast.makeText(this, "Unable to go back.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Flash toggle
-        findViewById(R.id.btnFlash).setOnClickListener(v -> toggleFlash(v));
+        findViewById(R.id.btnFlash).setOnClickListener(v -> {
+            try {
+                toggleFlash(v);
+            } catch (Exception e) {
+                Toast.makeText(this, "Unable to toggle flash.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Mode chips
         TextView chipQr      = findViewById(R.id.chipQr);
@@ -42,13 +57,25 @@ public class ScanActivity extends AppCompatActivity {
                 new TextView[]{chipQr, chipBarcode}));
 
         // Manual entry button
-        findViewById(R.id.btnManualEntry).setOnClickListener(v -> showManualEntryDialog());
+        android.view.View btnManual = findViewById(R.id.btnManualEntry);
+        btnManual.setOnClickListener(v -> {
+            try {
+                showManualEntryDialog();
+            } catch (Exception e) {
+                Toast.makeText(this, "Unable to open manual entry.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnManual.setOnLongClickListener(v -> {
+            exportDbForSqliteViewer();
+            return true;
+        });
 
-        // QR overlay - simulate scan after 3 seconds for demo
+        // QR overlay - simulate scan success after 3 seconds for demo
         QrOverlayView qrOverlay = findViewById(R.id.qrOverlay);
         if (qrOverlay != null) {
             qrOverlay.startScanAnimation();
         }
+        // Real scanner integration not wired yet; use manual code entry for completion.
     }
 
     private void toggleFlash(android.view.View btn) {
@@ -84,7 +111,7 @@ public class ScanActivity extends AppCompatActivity {
         builder.setTitle("Enter Location Code");
 
         final android.widget.EditText input = new android.widget.EditText(this);
-        input.setHint("e.g. LIB-3F-001");
+        input.setHint("e.g. CLIFTON-LIB-001");
         input.setInputType(android.text.InputType.TYPE_CLASS_TEXT
                 | android.text.InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
         int pad = (int) (16 * getResources().getDisplayMetrics().density);
@@ -94,18 +121,44 @@ public class ScanActivity extends AppCompatActivity {
         builder.setPositiveButton("Verify", (dialog, which) -> {
             String code = input.getText().toString().trim();
             if (!code.isEmpty()) {
-                Toast.makeText(this, "✅ Code accepted: " + code, Toast.LENGTH_SHORT).show();
-                // In production: validate code against backend, then navigate to challenge
-                Intent intent = new Intent(this, ChallengeDetailActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                if (scanHandled) return;
+                try {
+                    ProgressDbHelper db = new ProgressDbHelper(this);
+                    String expectedChallengeId = getIntent().getStringExtra(EXTRA_CHALLENGE_ID);
+                    ProgressDbHelper.CodeRedemptionResult res =
+                            db.redeemHardcodedCode(code, expectedChallengeId);
+                    if (res.success) {
+                        scanHandled = true;
+                        Toast.makeText(this,
+                                "✅ Code accepted! +" + res.xpReward + " XP",
+                                Toast.LENGTH_SHORT).show();
+                        exportDbForSqliteViewer();
+                        finish();
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                    } else {
+                        Toast.makeText(this, "❌ " + res.message, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(this, "Code verification failed.", Toast.LENGTH_SHORT).show();
+                }
             } else {
                 Toast.makeText(this, "Please enter a valid code", Toast.LENGTH_SHORT).show();
             }
         });
 
         builder.setNegativeButton("Cancel", null);
+        builder.setMessage("Try: CLIFTON-LIB-001, ERASMUS-LABS-220, SPORTS-VILLAGE-340");
         builder.show();
+    }
+
+    private void exportDbForSqliteViewer() {
+        try {
+            ProgressDbHelper db = new ProgressDbHelper(this);
+            String path = db.exportDatabaseForSqliteViewer(this);
+            Toast.makeText(this, "DB exported: " + path, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "DB export failed.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
