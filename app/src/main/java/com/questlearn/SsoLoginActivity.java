@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.checkbox.MaterialCheckBox;
+import com.questlearn.db.ProgressDbHelper;
 
 public class SsoLoginActivity extends AppCompatActivity {
 
@@ -37,16 +38,28 @@ public class SsoLoginActivity extends AppCompatActivity {
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
 
         btnBack.setOnClickListener(v -> {
-            onBackPressed();
+            try {
+                onBackPressed();
+            } catch (Exception e) {
+                Toast.makeText(this, "Unable to go back.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         tvForgotPassword.setOnClickListener(v -> {
             Toast.makeText(this,
-                    "Password reset link sent to your university email.",
+                    "Password reset link sent to your NTU email.",
                     Toast.LENGTH_SHORT).show();
         });
 
-        btnSignIn.setOnClickListener(v -> attemptLogin());
+        btnSignIn.setOnClickListener(v -> {
+            try {
+                attemptLogin();
+            } catch (Exception e) {
+                btnSignIn.setEnabled(true);
+                btnSignIn.setText("Sign In Securely");
+                Toast.makeText(this, "Sign-in failed. Please try again.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void attemptLogin() {
@@ -60,7 +73,7 @@ public class SsoLoginActivity extends AppCompatActivity {
         // Validate
         boolean valid = true;
         if (TextUtils.isEmpty(email)) {
-            emailLayout.setError("Please enter your university email");
+            emailLayout.setError("Please enter your NTU email");
             valid = false;
         } else if (!email.contains("@")) {
             emailLayout.setError("Please enter a valid email address");
@@ -81,52 +94,29 @@ public class SsoLoginActivity extends AppCompatActivity {
         btnSignIn.setEnabled(false);
         btnSignIn.setText("Signing in…");
 
-        // Simulate SSO authentication delay
-        btnSignIn.postDelayed(() -> {
-            saveSession(email, cbRemember.isChecked());
-            navigateToHome();
-        }, 1200);
+        ProgressDbHelper db = new ProgressDbHelper(this);
+        ProgressDbHelper.AuthResult auth = db.authenticateUser(email, password);
+        if (!auth.success) {
+            btnSignIn.setEnabled(true);
+            btnSignIn.setText("Sign In Securely");
+            passwordLayout.setError(auth.message);
+            return;
+        }
+
+        saveSession(email, cbRemember.isChecked(), auth.displayName, auth.initials);
+        navigateToHome();
     }
 
-    private void saveSession(String email, boolean rememberMe) {
-        // Extract name from email prefix
-        String emailUser = email.contains("@") ? email.split("@")[0] : email;
-        String displayName = formatName(emailUser);
-        String initials = getInitials(displayName);
-
+    private void saveSession(String email, boolean rememberMe, String displayName, String initials) {
         SharedPreferences prefs = getSharedPreferences("questlearn_prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("user_logged_in", rememberMe);
-        editor.putString("user_name", "Don Jacques Maseengo");
-        editor.putString("user_initials", "DM");
+        editor.putBoolean("user_logged_in", true);
+        editor.putBoolean("remember_me", rememberMe);
+        editor.putString("user_name", displayName.isEmpty() ? "NTU Student" : displayName);
+        editor.putString("user_initials", initials);
         editor.putString("user_email", email);
         editor.putBoolean("is_guest", false);
         editor.apply();
-    }
-
-    private String formatName(String emailUser) {
-        // Convert "don.maseengo" -> "Don Maseengo"
-        String[] parts = emailUser.split("[._]");
-        StringBuilder name = new StringBuilder();
-        for (String part : parts) {
-            if (!part.isEmpty()) {
-                name.append(Character.toUpperCase(part.charAt(0)))
-                    .append(part.substring(1).toLowerCase())
-                    .append(" ");
-            }
-        }
-        return name.toString().trim();
-    }
-
-    private String getInitials(String name) {
-        String[] words = name.split(" ");
-        if (words.length >= 2) {
-            return String.valueOf(words[0].charAt(0)).toUpperCase()
-                    + String.valueOf(words[words.length - 1].charAt(0)).toUpperCase();
-        } else if (words.length == 1 && !words[0].isEmpty()) {
-            return String.valueOf(words[0].charAt(0)).toUpperCase();
-        }
-        return "U";
     }
 
     private void navigateToHome() {
