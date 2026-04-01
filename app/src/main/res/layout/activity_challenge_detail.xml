@@ -29,7 +29,7 @@
                 android:layout_height="40dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_arrow_back"
-                android:imageTintList="@color/white"
+                app:tint="@color/white"
                 android:contentDescription="Back" />
 
             <TextView
@@ -48,7 +48,7 @@
                 android:layout_height="40dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_person"
-                android:imageTintList="@android:color/white"
+                app:tint="@android:color/white"
                 android:contentDescription="Favourite" />
 
         </LinearLayout>
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"
-            android:text="Library Quest:\nArchives Deep Dive"
+            android:text="Clifton Quest:\nLibrary Discovery"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="🏛️ Hallward Library · History Dept."
+            android:text="🏛️ Clifton Library · NTU Clifton"
             android:textSize="12sp"
             android:textColor="#BFFFFFFF"
             android:layout_marginBottom="14dp" />
@@ -172,7 +172,7 @@
                     android:id="@+id/tvAbout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Explore the hidden archives of Hallward Library and discover fascinating historical records from the university's founding in 1881. Scan QR codes at 4 key locations to unlock clues and complete the trail."
+                    android:text="Explore key learning spaces around Clifton Library and unlock challenge clues across the NTU Clifton campus. Scan QR codes at 4 checkpoints to complete the route."
                     android:textSize="14sp"
                     android:textColor="@color/grey_700"
                     android:lineSpacingMultiplier="1.6" />
@@ -257,7 +257,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="📍 Hallward Library, University Park · 80m away"
+                    android:text="📍 Clifton Library, Clifton Campus · 80m away"
                     android:textSize="12sp"
                     android:textColor="@color/grey_500" />
 
@@ -336,7 +336,7 @@
     </ScrollView>
 
     <!-- CTA Button (pinned) -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBeginChallenge"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -347,6 +347,7 @@
         android:textColor="@color/white"
         android:backgroundTint="@color/green_primary"
         android:fontFamily="sans-serif"
-        app:cornerRadius="28dp" />
+        app:cornerRadius="28dp"
+        style="@style/Widget.MaterialComponents.Button" />
 
 </LinearLayout>
