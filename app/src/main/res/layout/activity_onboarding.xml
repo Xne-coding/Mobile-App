@@ -39,7 +39,7 @@
 
             <Button
                 android:id="@+id/btnSkip"
-                style="@style/Widget.Material3.Button.TextButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
