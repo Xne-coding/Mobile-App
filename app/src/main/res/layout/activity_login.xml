@@ -129,7 +129,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sign in with University SSO"
+                            android:text="Sign in with NTU SSO"
                             android:textColor="@color/white"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -184,6 +184,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:text="Continue as Guest"
+                android:layout_marginBottom="14dp" />
+
+            <Button
+                android:id="@+id/btnCreateAccount"
+                style="@style/Button.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Create Account"
                 android:layout_marginBottom="24dp" />
 
             <TextView
