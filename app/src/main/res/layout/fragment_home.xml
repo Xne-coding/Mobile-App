@@ -43,7 +43,7 @@
                     android:id="@+id/tvUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Don Jacques Maseengo"
+                    android:text="NTU Student"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="DM"
+                    android:text="U"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -142,18 +142,20 @@
                         android:layout_marginBottom="8dp">
 
                         <TextView
+                            android:id="@+id/tvLevelLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Level 8 · Explorer"
+                            android:text="Level 0 · Beginner"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:textColor="@color/grey_700" />
 
                         <TextView
+                            android:id="@+id/tvXpSummary"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1,240 / 1,500 XP"
+                            android:text="0 / 1,500 XP"
                             android:textSize="12sp"
                             android:textColor="@color/blue_primary"
                             android:textStyle="bold" />
@@ -165,7 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="8dp"
                         android:max="100"
-                        android:progress="83"
+                        android:progress="0"
                         android:progressBackgroundTint="@color/grey_200"
                         android:progressTint="@color/blue_primary" />
                 </LinearLayout>
