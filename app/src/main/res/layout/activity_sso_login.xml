@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="University Sign In"
+            android:text="NTU Sign In"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/grey_900"
@@ -79,7 +79,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="University of Nottingham"
+                        android:text="Nottingham Trent University"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/blue_dark"
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UNIVERSITY EMAIL"
+                android:text="NTU EMAIL"
                 android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/grey_600"
@@ -109,7 +109,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -122,9 +122,8 @@
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="student@nottingham.ac.uk"
+                    android:hint="student@ntu.ac.uk"
                     android:inputType="textEmailAddress"
-                    android:text="don.maseengo@nottingham.ac.uk"
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -142,7 +141,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
