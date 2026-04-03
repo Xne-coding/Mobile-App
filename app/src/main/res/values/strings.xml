@@ -12,9 +12,9 @@
     <string name="onb_desc_3">Climb the leaderboard, show off your badges, and race friends to discover the whole campus first.</string>
 
     <!-- Login -->
-    <string name="sign_in_sso">Sign in with University SSO</string>
+    <string name="sign_in_sso">Sign in with NTU SSO</string>
     <string name="continue_guest">Continue as Guest</string>
-    <string name="university_email">University Email</string>
+    <string name="university_email">NTU Email</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forgot password?</string>
