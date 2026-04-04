@@ -1,5 +1,7 @@
 package com.questlearn;
 
+/** Small grid cells for earned / locked challenge badges on the profile screen. */
+
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
