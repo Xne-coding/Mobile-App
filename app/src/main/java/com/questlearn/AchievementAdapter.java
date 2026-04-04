@@ -1,5 +1,7 @@
 package com.questlearn;
 
+/** Recycler rows for profile achievements (locked vs unlocked styling). */
+
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,8 +73,6 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
                 tvStatus.setText("🔒");
                 itemView.setAlpha(0.5f);
             }
-
-            // Divider (bottom border via padding — handled in layout)
         }
     }
 }
