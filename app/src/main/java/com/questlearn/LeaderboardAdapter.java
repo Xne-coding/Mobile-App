@@ -1,11 +1,15 @@
 package com.questlearn;
 
+/*
+ * LeaderboardAdapter — binds LeaderboardEntry objects to item_leaderboard rows.
+ * Picks emoji avatar or initials and tints rank medals for top three.
+ */
+
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,7 +42,6 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
     static class ViewHolder extends RecyclerView.ViewHolder {
         private final View rowRoot;
         private final TextView tvRank, tvAvatar, tvName, tvPoints;
-        private final FrameLayout avatarContainer;
 
         ViewHolder(View view) {
             super(view);
@@ -47,15 +50,14 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
             tvAvatar        = view.findViewById(R.id.tvAvatar);
             tvName          = view.findViewById(R.id.tvName);
             tvPoints        = view.findViewById(R.id.tvPoints);
-            avatarContainer = view.getParent() instanceof ViewGroup
-                    ? (FrameLayout) ((ViewGroup) view).findViewById(R.id.tvAvatar).getParent()
-                    : null;
         }
 
         void bind(LeaderboardEntry entry) {
             tvRank.setText(entry.getRankDisplay());
             tvAvatar.setText(entry.getInitials());
             tvPoints.setText(String.format("%,d XP", entry.getXpPoints()));
+
+            int onSurface = UiTheme.colorOnSurface(itemView.getContext());
 
             // Current user styling
             if (entry.isCurrentUser()) {
@@ -65,12 +67,12 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
                 rowRoot.setBackgroundResource(R.drawable.bg_leaderboard_self_row);
             } else {
                 tvName.setText(entry.getName());
-                tvName.setTextColor(Color.parseColor("#424242"));
+                tvName.setTextColor(onSurface);
                 tvName.setTypeface(null, android.graphics.Typeface.NORMAL);
                 rowRoot.setBackgroundResource(android.R.color.transparent);
             }
 
-            // Rank colour
+            // Rank colour (medals for top 3; primary text for other ranks)
             switch (entry.getRank()) {
                 case 1: tvRank.setTextColor(Color.parseColor("#FFD600")); break;
                 case 2: tvRank.setTextColor(Color.parseColor("#9E9E9E")); break;
@@ -78,15 +80,24 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
                 default:
                     tvRank.setTextColor(entry.isCurrentUser()
                             ? Color.parseColor("#2196F3")
-                            : Color.parseColor("#BDBDBD"));
+                            : onSurface);
                     break;
             }
 
-            // Set avatar background colour
-            View avatarView = ((ViewGroup) tvAvatar.getParent());
+            View avatarView = (ViewGroup) tvAvatar.getParent();
             GradientDrawable circle = new GradientDrawable();
             circle.setShape(GradientDrawable.OVAL);
-            circle.setColor(entry.getAvatarColor());
+
+            AvatarOption opt = AvatarOption.findById(entry.getAvatarId());
+            if (opt != null) {
+                tvAvatar.setText(opt.getEmoji());
+                tvAvatar.setTextSize(14);
+                circle.setColor(opt.getBackgroundColor());
+            } else {
+                tvAvatar.setText(entry.getInitials());
+                tvAvatar.setTextSize(11);
+                circle.setColor(entry.getAvatarColor());
+            }
             avatarView.setBackground(circle);
         }
     }
