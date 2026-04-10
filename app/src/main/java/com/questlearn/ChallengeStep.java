@@ -1,5 +1,6 @@
 package com.questlearn;
 
+/** One numbered instruction line inside a challenge's step list. */
 public class ChallengeStep {
     private int number;
     private String text;
