@@ -1,17 +1,20 @@
 package com.questlearn;
 
-import android.content.SharedPreferences;
+/*
+ * ChangePasswordActivity — change password for a signed-in, non-guest user.
+ * Re-authenticates with the old password through Firebase, then sets the new one.
+ */
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.questlearn.db.ProgressDbHelper;
+import com.questlearn.db.FirebaseRepository;
 
-public class ChangePasswordActivity extends AppCompatActivity {
+public class ChangePasswordActivity extends QuestLearnBaseActivity {
 
     private TextInputLayout oldLayout;
     private TextInputLayout newLayout;
@@ -24,6 +27,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
+        SystemBarInsets.applyToRoot(this, R.id.changePasswordRoot);
 
         ImageButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> finishWithAnimation());
@@ -45,11 +49,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
         });
     }
 
+    /** Validates fields, then asks Firebase to re-auth with old password and set the new one. */
     private void updatePassword() {
         clearErrors();
-        SharedPreferences prefs = getSharedPreferences("questlearn_prefs", MODE_PRIVATE);
-        String email = prefs.getString("user_email", "");
-        if (TextUtils.isEmpty(email)) {
+
+        FirebaseRepository repo = new FirebaseRepository();
+        if (!repo.isSignedIn() || repo.isGuest()) {
             Toast.makeText(this, "No signed-in account found.", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -73,20 +78,24 @@ public class ChangePasswordActivity extends AppCompatActivity {
         }
         if (!valid) return;
 
-        ProgressDbHelper db = new ProgressDbHelper(this);
-        ProgressDbHelper.AuthResult auth = db.authenticateUser(email, oldPass);
-        if (!auth.success) {
-            oldLayout.setError("Current password is incorrect");
-            return;
-        }
+        repo.updatePassword(oldPass, newPass, new FirebaseRepository.Callback<Boolean>() {
+            @Override
+            public void onSuccess(Boolean updated) {
+                if (updated) {
+                    Toast.makeText(ChangePasswordActivity.this,
+                            "Password updated.", Toast.LENGTH_SHORT).show();
+                    finishWithAnimation();
+                } else {
+                    Toast.makeText(ChangePasswordActivity.this,
+                            "Password update failed.", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-        boolean updated = db.updatePassword(email, newPass);
-        if (updated) {
-            Toast.makeText(this, "Password updated.", Toast.LENGTH_SHORT).show();
-            finishWithAnimation();
-        } else {
-            Toast.makeText(this, "Password update failed.", Toast.LENGTH_SHORT).show();
-        }
+            @Override
+            public void onError(String message) {
+                oldLayout.setError(message);
+            }
+        });
     }
 
     private void clearErrors() {
@@ -97,6 +106,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     private void finishWithAnimation() {
         finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        UiTransitions.closeBackward(this);
     }
 }
