@@ -1,5 +1,10 @@
 package com.questlearn;
 
+/*
+ * ChallengeAdapter — RecyclerView rows for the home challenge list.
+ * Colours the card by challenge accent and opens ChallengeDetailActivity on tap.
+ */
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -103,8 +108,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.View
                 intent.putExtra(ChallengeDetailActivity.EXTRA_CHALLENGE_ID, ch.getId());
                 v.getContext().startActivity(intent);
                 if (v.getContext() instanceof android.app.Activity) {
-                    ((android.app.Activity) v.getContext()).overridePendingTransition(
-                            R.anim.slide_in_right, R.anim.slide_out_left);
+                    UiTransitions.openForward((android.app.Activity) v.getContext());
                 }
             });
         }
