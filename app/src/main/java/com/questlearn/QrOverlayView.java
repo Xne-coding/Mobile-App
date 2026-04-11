@@ -1,5 +1,11 @@
 package com.questlearn;
 
+/*
+ * QrOverlayView — drawn on top of the camera preview on ScanActivity.
+ * Dims the edges, draws a square "target" frame, corner brackets, and a moving
+ * scan line so users know where to aim the QR code.
+ */
+
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -16,8 +22,8 @@ import android.view.animation.LinearInterpolator;
 
 public class QrOverlayView extends View {
 
-    // Frame dimensions
-    private static final float FRAME_SIZE_RATIO = 0.62f;  // fraction of the smaller dimension
+    // How big the clear "hole" is compared to the smaller screen side (roughly 62%).
+    private static final float FRAME_SIZE_RATIO = 0.62f;
     private static final float CORNER_LENGTH_DP  = 40f;
     private static final float CORNER_STROKE_DP  = 4f;
 
