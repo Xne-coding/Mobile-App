@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bottom bar items. IDs must match nav_graph fragment ids where we navigate;
+  nav_scan only exists so the middle button can be caught in MainActivity.
+-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/homeFragment" android:icon="@drawable/ic_home" android:title="Home" />
     <item android:id="@+id/mapFragment" android:icon="@drawable/ic_map" android:title="Map" />
     <item android:id="@+id/nav_scan" android:icon="@drawable/ic_scan" android:title="Scan" />
+    <item android:id="@+id/rewardsFragment" android:icon="@drawable/ic_rewards" android:title="Rewards" />
     <item android:id="@+id/profileFragment" android:icon="@drawable/ic_person" android:title="Profile" />
 </menu>
