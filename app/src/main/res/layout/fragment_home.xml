@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Home tab: greeting and avatar, four stat chips, XP bar, challenge list, leaderboard preview.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/grey_50">
+    android:background="?android:attr/colorBackground">
 
-    <!-- Blue header -->
+    <!-- Top blue block: "Good morning", user name, circular avatar, then the four mini stats -->
     <LinearLayout
         android:id="@+id/homeHeader"
         android:layout_width="match_parent"
@@ -72,7 +75,7 @@
 
         </LinearLayout>
 
-        <!-- Stats row -->
+        <!-- XP, challenges completed, rank, streak — each is a small widget_stat_card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,7 +111,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Scrollable content -->
+    <!-- Everything below the header scrolls: XP card, challenges, leaderboard -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -149,7 +152,7 @@
                             android:text="Level 0 · Beginner"
                             android:textSize="13sp"
                             android:textStyle="bold"
-                            android:textColor="@color/grey_700" />
+                            android:textColor="?attr/colorOnSurface" />
 
                         <TextView
                             android:id="@+id/tvXpSummary"
@@ -190,7 +193,7 @@
                     android:text="Active Challenges"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_900" />
+                    android:textColor="?attr/colorOnSurface" />
 
                 <TextView
                     android:id="@+id/tvSeeMap"
@@ -228,7 +231,7 @@
                     android:text="Leaderboard"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_900" />
+                    android:textColor="?attr/colorOnSurface" />
 
                 <TextView
                     android:layout_width="wrap_content"
