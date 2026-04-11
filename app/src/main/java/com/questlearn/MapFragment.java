@@ -1,20 +1,36 @@
 package com.questlearn;
 
+/*
+ * MapFragment — Google Map of Clifton campus with challenge pins.
+ *
+ * Drops markers for buildings/challenges, handles taps to open details or scan,
+ * optional live location updates, a search dialog to jump the camera, and a small
+ * legend. Permission for fine location is requested when the user needs GPS features.
+ */
+
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -32,23 +48,26 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.questlearn.db.FirebaseRepository;
 import java.util.HashSet;
 import java.util.Set;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
 
-    private static final LatLng NTU_CLIFTON = new LatLng(52.9126, -1.1866);
+    private static final LatLng NTU_CLIFTON = new LatLng(52.9115, -1.1858);
     private static final float PROXIMITY_METERS = 80f;
 
     private static final int PIN_GPS = 0;
     private static final int PIN_QR = 1;
     private static final int PIN_BEACON = 2;
+    private static final int PIN_INFO = 3;
     private static final int PIN_LOCKED = 4;
 
     private GoogleMap googleMap;
     private FusedLocationProviderClient fusedLocationClient;
     private LocationCallback locationCallback;
     private final Set<String> proximityNotified = new HashSet<>();
+    private FirebaseRepository repo;
 
     private static class BuildingData {
         final String id;
@@ -67,10 +86,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private final BuildingData[] buildings = new BuildingData[]{
-            new BuildingData("clifton_library", "Clifton Library QR", new LatLng(52.9129, -1.1862), PIN_QR, "ch1"),
-            new BuildingData("erasmus_darwin", "Erasmus Labs GPS", new LatLng(52.9135, -1.1875), PIN_GPS, "ch2"),
-            new BuildingData("sports_village", "Sports Village Beacon", new LatLng(52.9118, -1.1880), PIN_BEACON, "ch3"),
-            new BuildingData("clifton_centre", "Locked", new LatLng(52.9125, -1.1855), PIN_LOCKED, null)
+            new BuildingData("clifton_library",  "Clifton Library",              new LatLng(52.91295, -1.18539), PIN_QR,     "ch1"),
+            new BuildingData("erasmus_darwin",   "Erasmus Darwin",               new LatLng(52.91070, -1.18712), PIN_GPS,    "ch2"),
+            new BuildingData("sports_centre",    "Lee Westwood Sports Centre",   new LatLng(52.91125, -1.18775), PIN_BEACON, "ch3"),
+            new BuildingData("students_union",   "Students' Union",              new LatLng(52.91228, -1.18362), PIN_QR,     "ch4"),
+            new BuildingData("ada_byron_king",   "Ada Byron King",               new LatLng(52.91117, -1.18504), PIN_GPS,    "ch5"),
+            new BuildingData("john_clare",       "John Clare Lecture Theatre",    new LatLng(52.91151, -1.18534), PIN_QR,     "ch6"),
+            new BuildingData("teaching_learning","Teaching & Learning",           new LatLng(52.91157, -1.18625), PIN_GPS,    "ch7"),
+            new BuildingData("cels_nsrc",        "CELS / NSRC",                  new LatLng(52.91112, -1.18663), PIN_BEACON, "ch8"),
+            new BuildingData("dh_lawrence",      "DH Lawrence",                  new LatLng(52.91200, -1.18404), PIN_QR,     "ch9"),
+            new BuildingData("mary_ann_evans",   "Mary Ann Evans",               new LatLng(52.91155, -1.18424), PIN_GPS,    "ch10"),
+            new BuildingData("lionel_robbins",   "Lionel Robbins",               new LatLng(52.91270, -1.18402), PIN_QR,     "ch11"),
+            new BuildingData("anthony_nolan",    "Anthony Nolan",                new LatLng(52.91324, -1.18452), PIN_BEACON, "ch12"),
+            new BuildingData("cancer_research",  "Cancer Research Centre",        new LatLng(52.91055, -1.18749), PIN_GPS,    "ch13"),
+            new BuildingData("istec",            "ISTeC",                        new LatLng(52.91089, -1.18444), PIN_QR,     "ch14"),
+            new BuildingData("new_hall_block",   "New Hall Block",               new LatLng(52.91254, -1.18607), PIN_BEACON, "ch15"),
+            new BuildingData("the_clubhouse",    "The Clubhouse",                new LatLng(52.91216, -1.18813), PIN_QR,     "ch16"),
+            new BuildingData("cricket_pavilion", "Cricket Pavilion",             new LatLng(52.91356, -1.18484), PIN_GPS,    "ch17"),
+            new BuildingData("engineering",      "Engineering Buildings",         new LatLng(52.91093, -1.18597), PIN_BEACON, "ch18"),
+            new BuildingData("ismart",           "iSMART",                       new LatLng(52.91042, -1.18650), PIN_GPS,    "ch19"),
+            new BuildingData("pavilion_building","Pavilion Building",            new LatLng(52.91285, -1.18462), PIN_QR,     "ch20"),
+            new BuildingData("rosalind_franklin","Rosalind Franklin",            new LatLng(52.91055, -1.18567), PIN_LOCKED, "ch21"),
     };
 
     private static class MarkerData {
@@ -105,6 +141,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        repo = new FirebaseRepository();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
         setupLocationCallback();
 
@@ -119,7 +156,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             fabScan.setOnClickListener(v -> {
                 try {
                     startActivity(new Intent(requireContext(), ScanActivity.class));
-                    requireActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    UiTransitions.openForward(requireActivity());
                 } catch (Exception e) {
                     showToast("Unable to open scanner.");
                 }
@@ -127,10 +164,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
 
         setupLegend(view);
+
+        View tvSearchHint = view.findViewById(R.id.tvSearchHint);
         View searchBar = view.findViewById(R.id.searchBar);
-        if (searchBar != null) {
-            searchBar.setOnClickListener(v -> showToast("Search coming soon."));
-        }
+        if (tvSearchHint != null) tvSearchHint.setOnClickListener(v -> showSearchDialog());
+        if (searchBar != null) searchBar.setOnClickListener(v -> showSearchDialog());
+
+        View btnMapSettings = view.findViewById(R.id.btnMapSettings);
+        if (btnMapSettings != null) btnMapSettings.setOnClickListener(v -> showMapSettingsDialog());
+
+        View btnAppBarSettings = view.findViewById(R.id.btnAppBarSettings);
+        if (btnAppBarSettings != null) btnAppBarSettings.setOnClickListener(v -> showMapSettingsDialog());
     }
 
     @Override
@@ -175,6 +219,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     Manifest.permission.ACCESS_COARSE_LOCATION
             });
         }
+
     }
 
     @Override
@@ -234,8 +279,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         if (fusedLocationClient != null && locationCallback != null) {
             try {
                 fusedLocationClient.removeLocationUpdates(locationCallback);
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {}
         }
     }
 
@@ -260,18 +304,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private void addMarker(@NonNull GoogleMap map, @NonNull BuildingData building) {
         float hue;
         switch (building.pinType) {
-            case PIN_QR:
-                hue = BitmapDescriptorFactory.HUE_GREEN;
-                break;
-            case PIN_BEACON:
-                hue = BitmapDescriptorFactory.HUE_ORANGE;
-                break;
-            case PIN_LOCKED:
-                hue = BitmapDescriptorFactory.HUE_VIOLET;
-                break;
-            default:
-                hue = BitmapDescriptorFactory.HUE_AZURE;
-                break;
+            case PIN_QR:     hue = BitmapDescriptorFactory.HUE_GREEN;  break;
+            case PIN_BEACON: hue = BitmapDescriptorFactory.HUE_ORANGE; break;
+            case PIN_LOCKED: hue = BitmapDescriptorFactory.HUE_VIOLET; break;
+            case PIN_INFO:   hue = BitmapDescriptorFactory.HUE_CYAN;   break;
+            default:         hue = BitmapDescriptorFactory.HUE_AZURE;  break;
         }
         Marker marker = map.addMarker(new MarkerOptions()
                 .position(building.latLng)
@@ -283,24 +320,38 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void handlePinTapped(int pinType, String label, @Nullable String challengeId) {
-        switch (pinType) {
-            case PIN_LOCKED:
-                showToast(label + " is locked. Complete previous challenge first.");
-                return;
-            case PIN_BEACON:
-                showToast("Beacon available near " + label + ".");
-                return;
-            default:
-                try {
-                    Intent intent = new Intent(requireContext(), ChallengeDetailActivity.class);
-                    if (challengeId != null) {
-                        intent.putExtra(ChallengeDetailActivity.EXTRA_CHALLENGE_ID, challengeId);
+        if (pinType == PIN_LOCKED) {
+            repo.countCompletedChallenges(new FirebaseRepository.Callback<Integer>() {
+                @Override
+                public void onSuccess(Integer done) {
+                    if (done >= 20) {
+                        openChallengeDetail(challengeId);
+                    } else {
+                        int remaining = 20 - done;
+                        showToast("🔒 Complete " + remaining + " more challenge"
+                                + (remaining != 1 ? "s" : "") + " to unlock " + label + ".");
                     }
-                    startActivity(intent);
-                    requireActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                } catch (Exception e) {
-                    showToast("Unable to open challenge details.");
                 }
+                @Override
+                public void onError(String msg) {
+                    showToast("Unable to check challenge progress.");
+                }
+            });
+            return;
+        }
+        openChallengeDetail(challengeId);
+    }
+
+    private void openChallengeDetail(@Nullable String challengeId) {
+        try {
+            Intent intent = new Intent(requireContext(), ChallengeDetailActivity.class);
+            if (challengeId != null) {
+                intent.putExtra(ChallengeDetailActivity.EXTRA_CHALLENGE_ID, challengeId);
+            }
+            startActivity(intent);
+            UiTransitions.openForward(requireActivity());
+        } catch (Exception e) {
+            showToast("Unable to open challenge details.");
         }
     }
 
@@ -315,6 +366,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         setLegendItem(view.findViewById(R.id.legendGps), 0xFF2196F3, "GPS");
         setLegendItem(view.findViewById(R.id.legendQr), 0xFF4CAF50, "QR Code");
         setLegendItem(view.findViewById(R.id.legendBeacon), 0xFFFF9800, "Beacon");
+        setLegendItem(view.findViewById(R.id.legendBuilding), 0xFF9C27B0, "Locked");
     }
 
     private void setLegendItem(View container, int color, String label) {
@@ -327,9 +379,100 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             circle.setColor(color);
             dot.setBackground(circle);
         }
-        if (tvLabel != null) {
-            tvLabel.setText(label);
+        if (tvLabel != null) tvLabel.setText(label);
+    }
+
+    private void showSearchDialog() {
+        Context ctx = requireContext();
+        float dp = ctx.getResources().getDisplayMetrics().density;
+        int pad = (int) (16 * dp);
+
+        LinearLayout layout = new LinearLayout(ctx);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setPadding(pad, pad, pad, 0);
+
+        EditText editSearch = new EditText(ctx);
+        editSearch.setHint("Search campus buildings…");
+        editSearch.setTextColor(UiTheme.colorOnSurface(ctx));
+        editSearch.setHintTextColor(UiTheme.textColorHint(ctx));
+        editSearch.setSingleLine(true);
+        layout.addView(editSearch);
+
+        ListView listView = new ListView(ctx);
+        listView.setPadding(0, (int) (8 * dp), 0, 0);
+        layout.addView(listView, new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, (int) (300 * dp)));
+
+        String[] names = new String[buildings.length];
+        for (int i = 0; i < buildings.length; i++) names[i] = buildings[i].label;
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(ctx,
+                android.R.layout.simple_list_item_1, names);
+        listView.setAdapter(adapter);
+
+        AlertDialog dialog = new AlertDialog.Builder(ctx)
+                .setTitle("Search Locations")
+                .setView(layout)
+                .setNegativeButton("Cancel", null)
+                .create();
+
+        editSearch.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+            }
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        listView.setOnItemClickListener((parent, v, position, id) -> {
+            String selected = adapter.getItem(position);
+            if (selected != null) {
+                for (BuildingData b : buildings) {
+                    if (b.label.equals(selected)) { zoomToBuilding(b); break; }
+                }
+            }
+            dialog.dismiss();
+        });
+
+        dialog.show();
+        SystemBarInsets.applyToDialog(dialog);
+    }
+
+    private void zoomToBuilding(BuildingData building) {
+        if (googleMap == null) return;
+        CameraPosition pos = new CameraPosition.Builder()
+                .target(building.latLng)
+                .zoom(18f)
+                .tilt(45f)
+                .build();
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+        showToast(building.label);
+    }
+
+    private void showMapSettingsDialog() {
+        String[] types = {"Normal", "Satellite", "Hybrid", "Terrain"};
+        int[] mapTypes = {
+                GoogleMap.MAP_TYPE_NORMAL,
+                GoogleMap.MAP_TYPE_SATELLITE,
+                GoogleMap.MAP_TYPE_HYBRID,
+                GoogleMap.MAP_TYPE_TERRAIN
+        };
+
+        int currentIdx = 0;
+        if (googleMap != null) {
+            int current = googleMap.getMapType();
+            for (int i = 0; i < mapTypes.length; i++) {
+                if (mapTypes[i] == current) { currentIdx = i; break; }
+            }
         }
+
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Map Style")
+                .setSingleChoiceItems(types, currentIdx, (dialog, which) -> {
+                    if (googleMap != null) googleMap.setMapType(mapTypes[which]);
+                    dialog.dismiss();
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 
     private void showToast(String message) {
