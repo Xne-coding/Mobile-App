@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Challenge detail: hero with icon and XP, distance line, mini map, steps list, begin button.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/challengeDetailRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/grey_50">
+    android:background="?android:attr/colorBackground">
 
-    <!-- Hero Header -->
+    <!-- Gradient header: navigation, challenge title, optional profile shortcut -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +19,7 @@
         android:paddingBottom="24dp"
         android:clipChildren="false">
 
-        <!-- Top bar -->
+        <!-- Back, title, profile icon -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -49,11 +53,11 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_person"
                 app:tint="@android:color/white"
-                android:contentDescription="Favourite" />
+                android:contentDescription="Profile" />
 
         </LinearLayout>
 
-        <!-- Badge icon -->
+        <!-- Large emoji / icon for this challenge -->
         <FrameLayout
             android:layout_width="72dp"
             android:layout_height="72dp"
@@ -93,7 +97,7 @@
             android:textColor="#BFFFFFFF"
             android:layout_marginBottom="14dp" />
 
-        <!-- Chips row -->
+        <!-- XP chip, difficulty, duration style chips -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +143,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Scrollable content -->
+    <!-- About, steps, map, rewards — scrolls above the fixed bottom button -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -151,7 +155,7 @@
             android:orientation="vertical"
             android:paddingBottom="100dp">
 
-            <!-- About section -->
+            <!-- Description / what you'll do -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -164,7 +168,7 @@
                     android:text="ABOUT"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_500"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:letterSpacing="0.07"
                     android:layout_marginBottom="8dp" />
 
@@ -174,12 +178,12 @@
                     android:layout_height="wrap_content"
                     android:text="Explore key learning spaces around Clifton Library and unlock challenge clues across the NTU Clifton campus. Scan QR codes at 4 checkpoints to complete the route."
                     android:textSize="14sp"
-                    android:textColor="@color/grey_700"
+                    android:textColor="?attr/colorOnSurface"
                     android:lineSpacingMultiplier="1.6" />
 
             </LinearLayout>
 
-            <!-- Steps section -->
+            <!-- RecyclerView of item_step (filled in code) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -193,7 +197,7 @@
                     android:text="STEPS"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_500"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:letterSpacing="0.07"
                     android:layout_marginBottom="12dp" />
 
@@ -205,7 +209,7 @@
 
             </LinearLayout>
 
-            <!-- Location section -->
+            <!-- Distance text + link to open main Map tab -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -219,11 +223,11 @@
                     android:text="LOCATION"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_500"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:letterSpacing="0.07"
                     android:layout_marginBottom="8dp" />
 
-                <!-- Mini map placeholder -->
+                <!-- Custom drawn fake map (MiniMapView), not Google Maps -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/miniMapCard"
                     android:layout_width="match_parent"
@@ -254,16 +258,17 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView
+                    android:id="@+id/tvDistance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="📍 Clifton Library, Clifton Campus · 80m away"
+                    android:text="📍 Calculating distance…"
                     android:textSize="12sp"
-                    android:textColor="@color/grey_500" />
+                    android:textColor="?android:attr/textColorSecondary" />
 
             </LinearLayout>
 
-            <!-- Rewards section -->
+            <!-- XP you'll earn for finishing -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -276,7 +281,7 @@
                     android:text="REWARDS"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_500"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:letterSpacing="0.07"
                     android:layout_marginBottom="8dp" />
 
@@ -295,8 +300,8 @@
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                             android:orientation="vertical" android:gravity="center" android:padding="12dp">
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚡" android:textSize="24sp" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="150" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/grey_900" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="XP POINTS" android:textSize="9sp" android:textColor="@color/grey_500" android:letterSpacing="0.05" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="150" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorOnSurface" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="XP POINTS" android:textSize="9sp" android:textColor="?android:attr/textColorSecondary" android:letterSpacing="0.05" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -310,8 +315,8 @@
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                             android:orientation="vertical" android:gravity="center" android:padding="12dp">
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏅" android:textSize="24sp" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/grey_900" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BADGE" android:textSize="9sp" android:textColor="@color/grey_500" android:letterSpacing="0.05" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorOnSurface" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BADGE" android:textSize="9sp" android:textColor="?android:attr/textColorSecondary" android:letterSpacing="0.05" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -324,8 +329,8 @@
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                             android:orientation="vertical" android:gravity="center" android:padding="12dp">
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔥" android:textSize="24sp" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+1" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/grey_900" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="STREAK" android:textSize="9sp" android:textColor="@color/grey_500" android:letterSpacing="0.05" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+1" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorOnSurface" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="STREAK" android:textSize="9sp" android:textColor="?android:attr/textColorSecondary" android:letterSpacing="0.05" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -335,7 +340,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- CTA Button (pinned) -->
+    <!-- Begin challenge → ScanActivity, or disabled text when already completed -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBeginChallenge"
         android:layout_width="match_parent"
