@@ -1,5 +1,10 @@
 package com.questlearn;
 
+/*
+ * OnboardingActivity — three swipeable intro slides (ViewPager2), dots, Skip/Next,
+ * and a final "Get started" that marks onboarding complete in prefs and opens login.
+ */
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,10 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class OnboardingActivity extends AppCompatActivity {
+public class OnboardingActivity extends QuestLearnBaseActivity {
 
     private ViewPager2 viewPager;
     private Button btnNext, btnSkip;
@@ -64,6 +68,7 @@ public class OnboardingActivity extends AppCompatActivity {
         });
     }
 
+    /** Rebuilds the little page indicator strip under the pager. */
     private void setupDots(int currentIndex) {
         dotsContainer.removeAllViews();
         int size = (int) getResources().getDimension(R.dimen.spacing_sm);
@@ -82,6 +87,7 @@ public class OnboardingActivity extends AppCompatActivity {
         }
     }
 
+    /** Last page: primary button becomes "Get started" and Skip hides. */
     private void updateButtons(int position) {
         if (position == totalSlides - 1) {
             btnNext.setText(getString(R.string.get_started));
@@ -92,13 +98,14 @@ public class OnboardingActivity extends AppCompatActivity {
         }
     }
 
+    /** Flip the pref flag so Splash won't send them through slides again. */
     private void finishOnboarding() {
         SharedPreferences prefs = getSharedPreferences("questlearn_prefs", MODE_PRIVATE);
         prefs.edit().putBoolean("onboarding_complete", true).apply();
 
         try {
             startActivity(new Intent(this, LoginActivity.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            UiTransitions.openForward(this);
             finish();
         } catch (Exception e) {
             Toast.makeText(this, "Unable to open login screen.", Toast.LENGTH_SHORT).show();
