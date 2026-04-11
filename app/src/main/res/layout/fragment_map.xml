@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Map tab: title bar, Google Map full bleed, pill search, legend, Scan FAB, layer button.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCE8DC">
+    android:background="?android:attr/colorBackground">
 
-    <!-- App Bar -->
+    <!-- "Campus Map" + shortcut that opens the same settings dialog as the map gear -->
     <LinearLayout
         android:id="@+id/appBar"
         android:layout_width="0dp"
@@ -14,7 +17,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingHorizontal="16dp"
-        android:background="@color/white"
+        android:background="?attr/colorSurface"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -26,19 +29,21 @@
             android:text="Campus Map"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/grey_900"
+            android:textColor="?attr/colorOnSurface"
             android:fontFamily="sans-serif" />
 
         <ImageButton
+            android:id="@+id/btnAppBarSettings"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_person"
+            app:tint="?attr/colorOnSurface"
             android:contentDescription="Settings" />
 
     </LinearLayout>
 
-    <!-- Google Map -->
+    <!-- Real map tiles (SupportMapFragment) -->
     <fragment
         android:id="@+id/googleMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -49,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Search bar overlay -->
+    <!-- Tappable pill: opens building search (same as hint row tap) -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/searchBar"
         android:layout_width="0dp"
@@ -70,23 +75,30 @@
             android:paddingHorizontal="16dp">
 
             <TextView
+                android:id="@+id/tvSearchHint"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:text="🔍  Search locations…"
                 android:textSize="13sp"
-                android:textColor="@color/grey_500" />
+                android:textColor="?android:attr/textColorSecondary" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnMapSettings"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="⚙️"
                 android:textSize="18sp"
-                android:textColor="@color/grey_400" />
+                android:textColor="?android:attr/textColorSecondary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Legend -->
+    <!-- Small key for marker types (GPS, QR, etc.) -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/legend"
         android:layout_width="wrap_content"
@@ -112,10 +124,13 @@
             <include layout="@layout/widget_legend_item"
                 android:id="@+id/legendBeacon"
                 android:layout_marginTop="5dp" />
+            <include layout="@layout/widget_legend_item"
+                android:id="@+id/legendBuilding"
+                android:layout_marginTop="5dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- FAB: Scan -->
+    <!-- Opens ScanActivity (same as bottom nav scan) -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabScan"
         android:layout_width="wrap_content"
