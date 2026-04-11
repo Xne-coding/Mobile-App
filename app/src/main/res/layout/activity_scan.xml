@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  QR scanner: dark chrome, CameraX preview, dim overlay + frame, manual code button.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scanRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#111111">
 
-    <!-- Dark header -->
+    <!-- Back, title, flash (torch) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -42,6 +46,7 @@
             android:background="@drawable/bg_flash_btn">
 
             <ImageView
+                android:id="@+id/flashIcon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center"
@@ -50,21 +55,19 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Camera preview area -->
+    <!-- Preview + placeholder until camera starts + drawing overlay + hint at bottom -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#1A1A1A">
 
-        <!-- Simulated camera texture / real: replace with PreviewView -->
-        <android.view.View
+        <androidx.camera.view.PreviewView
             android:id="@+id/previewView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_height="match_parent" />
 
-        <!-- Placeholder dark bg when camera not active -->
+        <!-- Shown until the camera preview is bound -->
         <View
             android:id="@+id/cameraBg"
             android:layout_width="match_parent"
@@ -84,14 +87,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_marginBottom="24dp"
-            android:text="Point camera at a QR code or beacon"
+            android:text="Point camera at a QR code"
             android:textSize="13sp"
             android:textColor="#99FFFFFF"
             android:fontFamily="sans-serif" />
 
     </FrameLayout>
 
-    <!-- Footer -->
+    <!-- Bottom bar: type a code if camera isn't practical -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,54 +103,7 @@
         android:paddingBottom="24dp"
         android:background="#111111">
 
-        <!-- Mode chips -->
-        <LinearLayout
-            android:id="@+id/modeChipsContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_marginBottom="14dp">
-
-            <TextView
-                android:id="@+id/chipQr"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_marginEnd="8dp"
-                android:paddingHorizontal="16dp"
-                android:gravity="center"
-                android:text="QR Code"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:background="@drawable/bg_scan_chip_active" />
-
-            <TextView
-                android:id="@+id/chipBarcode"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_marginEnd="8dp"
-                android:paddingHorizontal="16dp"
-                android:gravity="center"
-                android:text="Barcode"
-                android:textSize="12sp"
-                android:textColor="#A6FFFFFF"
-                android:background="@drawable/bg_scan_chip_inactive" />
-
-            <TextView
-                android:id="@+id/chipNfc"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:paddingHorizontal="16dp"
-                android:gravity="center"
-                android:text="NFC"
-                android:textSize="12sp"
-                android:textColor="#A6FFFFFF"
-                android:background="@drawable/bg_scan_chip_inactive" />
-
-        </LinearLayout>
-
-        <!-- Manual entry button -->
+        <!-- Opens alert dialog in Java -->
         <Button
             android:id="@+id/btnManualEntry"
             android:layout_width="match_parent"
