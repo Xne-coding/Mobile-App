@@ -1,5 +1,10 @@
 package com.questlearn;
 
+/*
+ * OnboardingAdapter — ViewPager2 glue: one OnboardingSlideFragment per intro page,
+ * with title, body text, emoji, and background tint baked in as arguments.
+ */
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
