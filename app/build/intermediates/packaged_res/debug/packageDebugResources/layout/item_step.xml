@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Numbered step line in challenge detail (circle with step index + instruction text).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="top|start"
+    android:paddingVertical="6dp">
+
+    <FrameLayout
+        android:id="@+id/stepNumContainer"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/tvStepNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="1"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvStepText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Find the main entrance information board"
+        android:textSize="13sp"
+        android:textColor="?attr/colorOnSurface"
+        android:lineSpacingMultiplier="1.4"
+        android:fontFamily="sans-serif" />
+
+</LinearLayout>

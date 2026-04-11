@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">1088438714307</string>
+    <string name="google_api_key" translatable="false">AIzaSyCRQgJk4UpilxRh-0OwbkEevIsGnlajB78</string>
+    <string name="google_app_id" translatable="false">1:1088438714307:android:bd96090b54503b5ae3c776</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCRQgJk4UpilxRh-0OwbkEevIsGnlajB78</string>
+    <string name="google_storage_bucket" translatable="false">ntuquestlearn-1.firebasestorage.app</string>
+    <string name="project_id" translatable="false">ntuquestlearn-1</string>
+</resources>

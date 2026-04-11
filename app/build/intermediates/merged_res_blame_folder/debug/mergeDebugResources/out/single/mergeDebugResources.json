@@ -1,0 +1,386 @@
+[
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_progress_bar_green.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\progress_bar_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_gold_gradient.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_gold_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_gradient_blue.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_gradient_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "com.questlearn.app-debug-67:/color-night_nav_item_color.xml.flat",
+        "source": "com.questlearn.app-main-69:/color-night/nav_item_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_scan_chip_inactive.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_scan_chip_inactive.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_avatar_option.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_avatar_option.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_map.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.questlearn.app-debug-67:/layout_dialog_avatar_picker.xml.flat",
+        "source": "com.questlearn.app-main-69:/layout/dialog_avatar_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\color-night_nav_item_color.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\color-night\\nav_item_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_avatar_circle.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_avatar_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_widget_legend_item.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\widget_legend_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_onboarding.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_onboarding.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_leaderboard_self_row.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_leaderboard_self_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\anim_slide_in_left.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\anim\\slide_in_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_progress_track.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_progress_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_widget_stat_card.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\widget_stat_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_blue_icon_box.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_blue_icon_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_challenge_badge.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_challenge_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_fragment_map.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_ach_icon.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_ach_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\color_nav_item_color.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\color\\nav_item_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_card_white.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_card_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_widget_profile_stat.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\widget_profile_stat.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_dashed_ring.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_dashed_ring.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_challenge_green.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_challenge_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_icon_box.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_icon_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_leaderboard.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_leaderboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_avatar.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_avatar.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_dot_inactive.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_dot_inactive.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_chip_blue.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_chip_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_level_chip.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_level_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_scan_chip_active.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_scan_chip_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_challenge_orange.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_challenge_orange.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_flash_btn_on.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_flash_btn_on.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_rewards.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_rewards.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_card_blue_border.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_card_blue_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_btn_sso.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_btn_sso.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_dialog_avatar_picker.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\dialog_avatar_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_fragment_rewards.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_rewards.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_change_password.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_flash_btn.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_flash_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_blue_surface_rounded.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_blue_surface_rounded.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_hero_chip.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_hero_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_profile_avatar.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_profile_avatar.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_chip_green.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_chip_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_chip_orange.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_chip_orange.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_scan.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_achievement.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_achievement.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_voucher_history.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_voucher_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "com.questlearn.app-debug-67:/layout_activity_settings.xml.flat",
+        "source": "com.questlearn.app-main-69:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_create_account.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_create_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_scan.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_fragment_onboarding_slide.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_onboarding_slide.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_step.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_step.xml"
+    },
+    {
+        "merged": "com.questlearn.app-debug-67:/drawable_ic_settings.xml.flat",
+        "source": "com.questlearn.app-main-69:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_dot_active.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_dot_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_flash.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_flash.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_qr_frame_corner.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_qr_frame_corner.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_stat_card.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_stat_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_badge.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_challenge_blue.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_challenge_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_blue_gradient.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_blue_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_dialog_voucher_qr.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\dialog_voucher_qr.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_challenge_detail.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_challenge_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_manual_btn.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_manual_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_white_rounded.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_white_rounded.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_qr_frame.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_qr_frame.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_progress_bar_drawable.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\progress_bar_drawable.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_item_challenge.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_challenge.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\anim_slide_out_right.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\anim\\slide_out_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\layout_activity_sso_login.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_sso_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-debug-67:\\drawable_bg_badge_circle.xml.flat",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\drawable\\bg_badge_circle.xml"
+    }
+]

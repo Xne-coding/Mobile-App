@@ -1,0 +1,69 @@
+com.questlearn.app-datastore-preferences-core-release-0 C:\Users\lapla\.gradle\caches\8.9\transforms\01499fde146df1c2d7cb35937b206f78\transformed\datastore-preferences-core-release\res
+com.questlearn.app-play-services-basement-18.9.0-1 C:\Users\lapla\.gradle\caches\8.9\transforms\02418baf319bd4378765ca62e4963ecd\transformed\play-services-basement-18.9.0\res
+com.questlearn.app-ads-adservices-1.1.0-beta11-2 C:\Users\lapla\.gradle\caches\8.9\transforms\033dc848b9e9d80281324fb58067e3d3\transformed\ads-adservices-1.1.0-beta11\res
+com.questlearn.app-emoji2-views-helper-1.3.0-3 C:\Users\lapla\.gradle\caches\8.9\transforms\05180afb174daccecb9b04bf306a3bcc\transformed\emoji2-views-helper-1.3.0\res
+com.questlearn.app-startup-runtime-1.1.1-4 C:\Users\lapla\.gradle\caches\8.9\transforms\07d96a7862651ec68068613f7433819c\transformed\startup-runtime-1.1.1\res
+com.questlearn.app-cardview-1.0.0-5 C:\Users\lapla\.gradle\caches\8.9\transforms\08d4aae20845e902f1e1b40f77edc6c1\transformed\cardview-1.0.0\res
+com.questlearn.app-lifecycle-viewmodel-savedstate-2.8.4-6 C:\Users\lapla\.gradle\caches\8.9\transforms\0a8f76555649158449e3dd0a7fad27cf\transformed\lifecycle-viewmodel-savedstate-2.8.4\res
+com.questlearn.app-activity-ktx-1.9.0-7 C:\Users\lapla\.gradle\caches\8.9\transforms\17512173de885f6ff73f4cf714122dd2\transformed\activity-ktx-1.9.0\res
+com.questlearn.app-play-services-auth-20.7.0-8 C:\Users\lapla\.gradle\caches\8.9\transforms\1792cf6e8e203518468c564f02c9804c\transformed\play-services-auth-20.7.0\res
+com.questlearn.app-viewpager2-1.1.0-9 C:\Users\lapla\.gradle\caches\8.9\transforms\1e1c1f46271a067b7cfaa6a81bc6ac2e\transformed\viewpager2-1.1.0\res
+com.questlearn.app-play-services-maps-19.0.0-10 C:\Users\lapla\.gradle\caches\8.9\transforms\2416f0ff317b3b78ca5915b12df1c812\transformed\play-services-maps-19.0.0\res
+com.questlearn.app-lifecycle-livedata-2.8.4-11 C:\Users\lapla\.gradle\caches\8.9\transforms\25c21c4c4e72db022a4e1f0d1ef0900c\transformed\lifecycle-livedata-2.8.4\res
+com.questlearn.app-camera-view-1.4.1-12 C:\Users\lapla\.gradle\caches\8.9\transforms\29b71594dc2c38d5fee8bb65c23f4a9b\transformed\camera-view-1.4.1\res
+com.questlearn.app-navigation-fragment-2.8.0-13 C:\Users\lapla\.gradle\caches\8.9\transforms\351b9383f280e299ebe046d7326e0c71\transformed\navigation-fragment-2.8.0\res
+com.questlearn.app-constraintlayout-2.1.4-14 C:\Users\lapla\.gradle\caches\8.9\transforms\35718e1ded7e68ef7c540244d94dc4cf\transformed\constraintlayout-2.1.4\res
+com.questlearn.app-transition-1.5.0-15 C:\Users\lapla\.gradle\caches\8.9\transforms\3bc90193558c5a03cfd7f2f20f612eb9\transformed\transition-1.5.0\res
+com.questlearn.app-appcompat-resources-1.7.0-16 C:\Users\lapla\.gradle\caches\8.9\transforms\3e440ff80470da19aa28bb2caabf004a\transformed\appcompat-resources-1.7.0\res
+com.questlearn.app-lifecycle-livedata-core-2.8.4-17 C:\Users\lapla\.gradle\caches\8.9\transforms\3f3a04162d33a804ad61aa1d198fd2b1\transformed\lifecycle-livedata-core-2.8.4\res
+com.questlearn.app-lifecycle-viewmodel-release-18 C:\Users\lapla\.gradle\caches\8.9\transforms\45688d87498c17b9167ed8c20dab6ac1\transformed\lifecycle-viewmodel-release\res
+com.questlearn.app-navigation-common-2.8.0-19 C:\Users\lapla\.gradle\caches\8.9\transforms\461aa82db4e726b9535cc673c99696eb\transformed\navigation-common-2.8.0\res
+com.questlearn.app-customview-poolingcontainer-1.0.0-20 C:\Users\lapla\.gradle\caches\8.9\transforms\515328d8b84802a40722ec632c4e6d87\transformed\customview-poolingcontainer-1.0.0\res
+com.questlearn.app-savedstate-ktx-1.2.1-21 C:\Users\lapla\.gradle\caches\8.9\transforms\570414240566a7aba52c2d263fdaefaf\transformed\savedstate-ktx-1.2.1\res
+com.questlearn.app-recyclerview-1.3.2-22 C:\Users\lapla\.gradle\caches\8.9\transforms\6615ddc5fc206934a20f50a1b22e993f\transformed\recyclerview-1.3.2\res
+com.questlearn.app-ads-adservices-java-1.1.0-beta11-23 C:\Users\lapla\.gradle\caches\8.9\transforms\66c1df2200981681a1ceed0ee676a697\transformed\ads-adservices-java-1.1.0-beta11\res
+com.questlearn.app-coordinatorlayout-1.1.0-24 C:\Users\lapla\.gradle\caches\8.9\transforms\6b9c4a06c63d935aaea3e020937bc58c\transformed\coordinatorlayout-1.1.0\res
+com.questlearn.app-tracing-1.2.0-25 C:\Users\lapla\.gradle\caches\8.9\transforms\72bc559f6a5a41c39d284d0cf91487ef\transformed\tracing-1.2.0\res
+com.questlearn.app-datastore-preferences-release-26 C:\Users\lapla\.gradle\caches\8.9\transforms\73e9db9bb74aa69f60a0ac0a752b7446\transformed\datastore-preferences-release\res
+com.questlearn.app-lifecycle-livedata-core-ktx-2.8.4-27 C:\Users\lapla\.gradle\caches\8.9\transforms\7d868d8ddb2146174b2bd83d731cd858\transformed\lifecycle-livedata-core-ktx-2.8.4\res
+com.questlearn.app-camera-video-1.4.1-28 C:\Users\lapla\.gradle\caches\8.9\transforms\7e1b77bacee8229168431f0cc52211ac\transformed\camera-video-1.4.1\res
+com.questlearn.app-fragment-1.8.2-29 C:\Users\lapla\.gradle\caches\8.9\transforms\7f60f412e98e5159aa4fa7c59af5e6c1\transformed\fragment-1.8.2\res
+com.questlearn.app-activity-1.9.0-30 C:\Users\lapla\.gradle\caches\8.9\transforms\82734a7c6a63d5f5a43f8504e05ffd90\transformed\activity-1.9.0\res
+com.questlearn.app-core-1.13.1-31 C:\Users\lapla\.gradle\caches\8.9\transforms\956357087182f6043307e2553530ed66\transformed\core-1.13.1\res
+com.questlearn.app-lifecycle-runtime-ktx-release-32 C:\Users\lapla\.gradle\caches\8.9\transforms\95d9d51dc0085d3c7e99f201d6f9de71\transformed\lifecycle-runtime-ktx-release\res
+com.questlearn.app-savedstate-1.2.1-33 C:\Users\lapla\.gradle\caches\8.9\transforms\9acc85481f9614d712fbb6d74ed5fdea\transformed\savedstate-1.2.1\res
+com.questlearn.app-annotation-experimental-1.4.1-34 C:\Users\lapla\.gradle\caches\8.9\transforms\a0228f1280140fcd0c22874cfa69448b\transformed\annotation-experimental-1.4.1\res
+com.questlearn.app-datastore-release-35 C:\Users\lapla\.gradle\caches\8.9\transforms\a9788d2a0bc16eee66c4ddbe94b296b4\transformed\datastore-release\res
+com.questlearn.app-lifecycle-viewmodel-ktx-2.8.4-36 C:\Users\lapla\.gradle\caches\8.9\transforms\abb6fbbb5fbe114f6e617d6963bd9feb\transformed\lifecycle-viewmodel-ktx-2.8.4\res
+com.questlearn.app-slidingpanelayout-1.2.0-37 C:\Users\lapla\.gradle\caches\8.9\transforms\abc5418b955aa770778b8b0e88bf1f3a\transformed\slidingpanelayout-1.2.0\res
+com.questlearn.app-camera-camera2-1.4.1-38 C:\Users\lapla\.gradle\caches\8.9\transforms\aff8fb08a1099b9978611892f686ebb6\transformed\camera-camera2-1.4.1\res
+com.questlearn.app-lifecycle-process-2.8.4-39 C:\Users\lapla\.gradle\caches\8.9\transforms\b01067d9c4873d30283c2c15f7755ed0\transformed\lifecycle-process-2.8.4\res
+com.questlearn.app-navigation-ui-2.8.0-40 C:\Users\lapla\.gradle\caches\8.9\transforms\b352c52b8b1af4154bb348c4f5063526\transformed\navigation-ui-2.8.0\res
+com.questlearn.app-browser-1.4.0-41 C:\Users\lapla\.gradle\caches\8.9\transforms\b3a693e7d7463b3a4bb3aa5b96e2840a\transformed\browser-1.4.0\res
+com.questlearn.app-appcompat-1.7.0-42 C:\Users\lapla\.gradle\caches\8.9\transforms\ba465420d04cf77a947e44a7a5613a36\transformed\appcompat-1.7.0\res
+com.questlearn.app-tracing-ktx-1.2.0-43 C:\Users\lapla\.gradle\caches\8.9\transforms\be163cb5ff24c4169868630f9d5d947e\transformed\tracing-ktx-1.2.0\res
+com.questlearn.app-credentials-play-services-auth-1.2.0-rc01-44 C:\Users\lapla\.gradle\caches\8.9\transforms\bf26bf7ab05651e4186b16b6e18489e2\transformed\credentials-play-services-auth-1.2.0-rc01\res
+com.questlearn.app-core-ktx-1.13.1-45 C:\Users\lapla\.gradle\caches\8.9\transforms\c194b53c17831678b2b23f3aac05d79e\transformed\core-ktx-1.13.1\res
+com.questlearn.app-fragment-ktx-1.8.2-46 C:\Users\lapla\.gradle\caches\8.9\transforms\c439332c0948171bf9a2ed1516bef7b5\transformed\fragment-ktx-1.8.2\res
+com.questlearn.app-material-1.12.0-47 C:\Users\lapla\.gradle\caches\8.9\transforms\c67463da769ae53fbadf97ea363187e0\transformed\material-1.12.0\res
+com.questlearn.app-lifecycle-runtime-release-48 C:\Users\lapla\.gradle\caches\8.9\transforms\c9665b2866acab050a0ca8c42af6bf8c\transformed\lifecycle-runtime-release\res
+com.questlearn.app-drawerlayout-1.1.1-49 C:\Users\lapla\.gradle\caches\8.9\transforms\caf33a768f2b359c88590e3698a4ecfc\transformed\drawerlayout-1.1.1\res
+com.questlearn.app-credentials-1.2.0-rc01-50 C:\Users\lapla\.gradle\caches\8.9\transforms\ccc3b57c0f2335ff29ffb1132c01cef5\transformed\credentials-1.2.0-rc01\res
+com.questlearn.app-datastore-core-release-51 C:\Users\lapla\.gradle\caches\8.9\transforms\cf3bb3f687aee650ee3ad440aaa56976\transformed\datastore-core-release\res
+com.questlearn.app-window-1.0.0-52 C:\Users\lapla\.gradle\caches\8.9\transforms\d165e05b54b337b14d87bd0be796ce1e\transformed\window-1.0.0\res
+com.questlearn.app-core-runtime-2.2.0-53 C:\Users\lapla\.gradle\caches\8.9\transforms\d8e1cd242e0803e00211e467ba292525\transformed\core-runtime-2.2.0\res
+com.questlearn.app-play-services-base-18.9.0-54 C:\Users\lapla\.gradle\caches\8.9\transforms\da3bf380480ee8b5a16263b5b5fdcfe8\transformed\play-services-base-18.9.0\res
+com.questlearn.app-emoji2-1.3.0-55 C:\Users\lapla\.gradle\caches\8.9\transforms\de117b25a8af17ca3c6d262e3736e6e0\transformed\emoji2-1.3.0\res
+com.questlearn.app-camera-core-1.4.1-56 C:\Users\lapla\.gradle\caches\8.9\transforms\e4a306966acdb6796b3e39f43bbb5ccc\transformed\camera-core-1.4.1\res
+com.questlearn.app-navigation-runtime-2.8.0-57 C:\Users\lapla\.gradle\caches\8.9\transforms\e5b7a8d9be82157ca1fda65416c0716b\transformed\navigation-runtime-2.8.0\res
+com.questlearn.app-profileinstaller-1.3.1-58 C:\Users\lapla\.gradle\caches\8.9\transforms\e8aa7c2ed4537de41f1feafec181f3be\transformed\profileinstaller-1.3.1\res
+com.questlearn.app-core-common-2.0.3-59 C:\Users\lapla\.gradle\caches\8.9\transforms\ea510e57905abbaf25b0b5af496fd60d\transformed\core-common-2.0.3\res
+com.questlearn.app-camera-lifecycle-1.4.1-60 C:\Users\lapla\.gradle\caches\8.9\transforms\f680f20c5ef6baaddc7653ecee64090a\transformed\camera-lifecycle-1.4.1\res
+com.questlearn.app-firebase-common-22.0.1-61 C:\Users\lapla\.gradle\caches\8.9\transforms\f8501b4f47998d7ab71e1bd313658eb6\transformed\firebase-common-22.0.1\res
+com.questlearn.app-res-62 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\build\generated\res\processDebugGoogleServices
+com.questlearn.app-resValues-63 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\build\generated\res\resValues\debug
+com.questlearn.app-packageDebugResources-64 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.questlearn.app-packageDebugResources-65 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.questlearn.app-debug-66 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.questlearn.app-debug-67 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\src\debug\res
+com.questlearn.app-main-68 C:\Users\lapla\Downloads\Quest Learn\QuestLearn_Android_v4 (3)\QuestLearn_Android_v4\QuestLearn\app\src\main\res

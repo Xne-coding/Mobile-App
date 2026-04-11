@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reused on Home header: big white number + small uppercase label on blue-tinted card.
+  Include with android:id on the root so Java can find tvStatValue / tvStatLabel.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_stat_card"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/tvStatValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif" />
+
+    <TextView
+        android:id="@+id/tvStatLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LABEL"
+        android:textSize="9sp"
+        android:textColor="#BFFFFFFF"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.05"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>

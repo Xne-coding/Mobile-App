@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1088438714307",
+    "project_id": "ntuquestlearn-1",
+    "storage_bucket": "ntuquestlearn-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088438714307:android:bd96090b54503b5ae3c776",
+        "android_client_info": {
+          "package_name": "com.questlearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRQgJk4UpilxRh-0OwbkEevIsGnlajB78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+
+  "configuration_version": "1"
+}

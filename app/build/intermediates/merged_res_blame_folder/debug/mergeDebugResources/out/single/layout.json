@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_scan.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_challenge_detail.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_challenge_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_change_password.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\widget_legend_item.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\widget_legend_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\dialog_voucher_qr.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\dialog_voucher_qr.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_leaderboard.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_leaderboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "com.questlearn.app-mergeDebugResources-66:/layout/activity_settings.xml",
+        "source": "com.questlearn.app-main-69:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\widget_stat_card.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\widget_stat_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_achievement.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_achievement.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_sso_login.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_sso_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_badge.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\fragment_rewards.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_rewards.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_create_account.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_create_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\widget_profile_stat.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\widget_profile_stat.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\fragment_onboarding_slide.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_onboarding_slide.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_onboarding.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_onboarding.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_voucher_history.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_voucher_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_avatar_option.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_avatar_option.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\fragment_map.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\dialog_avatar_picker.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\dialog_avatar_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_step.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_step.xml"
+    },
+    {
+        "merged": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-mergeDebugResources-66:\\layout\\item_challenge.xml",
+        "source": "C:\\Users\\lapla\\.gradle\\daemon\\8.9\\com.questlearn.app-main-69:\\layout\\item_challenge.xml"
+    },
+    {
+        "merged": "com.questlearn.app-mergeDebugResources-66:/layout/dialog_avatar_picker.xml",
+        "source": "com.questlearn.app-main-69:/layout/dialog_avatar_picker.xml"
+    }
+]
