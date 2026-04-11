@@ -1,5 +1,10 @@
 package com.questlearn;
 
+/*
+ * MiniMapView — decorative fake map on challenge detail (not real Google Maps).
+ * Draws blocks, grid, and an animated pin so the screen feels alive.
+ */
+
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.*;
