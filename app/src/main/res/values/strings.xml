@@ -15,9 +15,13 @@
     <string name="sign_in_sso">Sign in with NTU SSO</string>
     <string name="continue_guest">Continue as Guest</string>
     <string name="university_email">NTU Email</string>
+    <string name="email_invalid">Enter a valid email address.</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="forgot_password_need_email">Enter your email above, then tap Forgot password again.</string>
+    <string name="forgot_password_email_sent">Check your email for a link to reset your password. If you don’t see it, check spam or try again in a few minutes.</string>
+    <string name="forgot_password_sending">Sending…</string>
     <string name="sign_in">Sign In Securely</string>
     <string name="skip">Skip</string>
     <string name="next">Next</string>
@@ -28,10 +32,32 @@
     <string name="nav_map">Map</string>
     <string name="nav_scan">Scan</string>
     <string name="nav_profile">Profile</string>
+    <string name="recent_achievements_empty">No challenge completions yet. Scan a campus QR code or enter a valid location code to see your activity here.</string>
 
     <!-- Misc -->
     <string name="xp_format">%1$d XP</string>
     <string name="level_format">Level %1$d · %2$s</string>
     <string name="rank_format">#%1$d</string>
     <string name="distance_format">%1$dm away</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_back">Back</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_theme_hint">Choose bright (light) or dark colors for the app. Scan screen stays dark for the camera.</string>
+    <string name="settings_theme_light">Bright</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_section_text_motion">Text and motion</string>
+    <string name="settings_font_size_title">Text size</string>
+    <string name="settings_font_size_desc">0% keeps your system font size; 100% is the largest size in this app (on top of system settings).</string>
+    <string name="settings_font_percent">%1$d%%</string>
+    <string name="settings_reduce_slides">Reduce slide animations</string>
+    <string name="settings_reduce_slides_desc">Uses instant transitions instead of sliding between screens</string>
+    <string name="settings_read_aloud">Read aloud</string>
+    <string name="settings_read_aloud_desc">When on, long-press any label or paragraph to hear it spoken (uses your device text-to-speech language).</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_change_password">Change password</string>
+    <string name="settings_logout">Log out</string>
+    <string name="settings_logged_out">Logged out</string>
+    <string name="settings_change_password_error">Unable to open password settings.</string>
 </resources>
