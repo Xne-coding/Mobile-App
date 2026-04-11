@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  In-app navigation graph: four destinations for the bottom nav (Scan is NOT here —
+  MainActivity starts ScanActivity separately). startDestination = Home.
+-->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
     <fragment android:id="@+id/homeFragment" android:name="com.questlearn.HomeFragment" android:label="Home" />
     <fragment android:id="@+id/mapFragment" android:name="com.questlearn.MapFragment" android:label="Map" />
+    <fragment android:id="@+id/rewardsFragment" android:name="com.questlearn.RewardsFragment" android:label="Rewards" />
     <fragment android:id="@+id/profileFragment" android:name="com.questlearn.ProfileFragment" android:label="Profile" />
 </navigation>
