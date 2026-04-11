@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Single legend row on the map: coloured dot + label (Java sets dot colour per type).
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -19,6 +22,6 @@
         android:text="GPS"
         android:textSize="10sp"
         android:textStyle="bold"
-        android:textColor="@color/grey_700" />
+        android:textColor="?attr/colorOnSurface" />
 
 </LinearLayout>
