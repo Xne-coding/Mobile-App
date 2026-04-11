@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile tab: toolbar with settings, hero with avatar (tap = picker), stats, XP bar,
+  badge grid, achievement list. Account actions live in Settings.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/grey_50">
+    android:background="?android:attr/colorBackground">
 
-    <!-- App Bar -->
+    <!-- Top bar: title and settings (full-width Log out remains below) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="16dp"
-        android:background="@color/white">
+        android:paddingHorizontal="8dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:background="?attr/colorSurface">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginStart="8dp"
             android:text="Profile"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/grey_900"
-            android:fontFamily="sans-serif" />
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="sans-serif"
+            android:maxLines="1"
+            android:ellipsize="end" />
 
-        <ImageButton
-            android:id="@+id/btnLogout"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+        <!-- 48dp min touch target; FrameLayout receives taps (easier than a small ImageButton on emulator). -->
+        <FrameLayout
+            android:id="@+id/btnSettings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_logout"
-            android:contentDescription="Log out" />
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/settings_title">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:importantForAccessibility="no"
+                app:srcCompat="@drawable/ic_settings" />
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -45,7 +65,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Hero header -->
+            <!-- Blue gradient block: big avatar, name, subtitle, level chip -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,23 +75,46 @@
                 android:padding="24dp"
                 android:paddingBottom="36dp">
 
-                <!-- Avatar -->
+                <!-- Avatar (tap to change) -->
                 <FrameLayout
+                    android:id="@+id/profileAvatarContainer"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/bg_profile_avatar"
                     android:layout_marginBottom="10dp">
 
-                    <TextView
-                        android:id="@+id/tvAvatarInitials"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="U"
-                        android:textSize="28sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:fontFamily="sans-serif" />
+                    <FrameLayout
+                        android:id="@+id/profileAvatarCircle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/bg_profile_avatar">
+
+                        <TextView
+                            android:id="@+id/tvAvatarInitials"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="U"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:fontFamily="sans-serif" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:backgroundTint="#FFFFFF"
+                        android:elevation="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="\u270F\uFE0F"
+                            android:textSize="11sp" />
+                    </FrameLayout>
                 </FrameLayout>
 
                 <TextView
@@ -170,7 +213,7 @@
                     android:text="PROGRESS TO LEVEL 9"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_500"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:letterSpacing="0.07"
                     android:layout_marginBottom="8dp" />
 
@@ -197,7 +240,7 @@
                         android:layout_weight="1"
                         android:text="0 XP"
                         android:textSize="11sp"
-                        android:textColor="@color/grey_500" />
+                        android:textColor="?android:attr/textColorSecondary" />
 
                     <TextView
                         android:id="@+id/tvTargetXp"
@@ -205,33 +248,9 @@
                         android:layout_height="wrap_content"
                         android:text="1,500 XP"
                         android:textSize="11sp"
-                        android:textColor="@color/grey_500" />
+                        android:textColor="?android:attr/textColorSecondary" />
                 </LinearLayout>
             </LinearLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnChangePassword"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="12dp"
-                android:text="Change Password"
-                android:textAllCaps="false"
-                android:textColor="@color/blue_primary"
-                app:strokeColor="@color/blue_primary" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLogoutSecondary"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="12dp"
-                android:text="Log out"
-                android:textAllCaps="false"
-                android:textColor="@color/red_primary"
-                app:strokeColor="@color/red_primary" />
 
             <!-- Badges section -->
             <TextView
@@ -242,7 +261,7 @@
                 android:text="BADGES"
                 android:textSize="11sp"
                 android:textStyle="bold"
-                android:textColor="@color/grey_500"
+                android:textColor="?android:attr/textColorSecondary"
                 android:letterSpacing="0.07" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -263,15 +282,25 @@
                 android:text="RECENT ACHIEVEMENTS"
                 android:textSize="11sp"
                 android:textStyle="bold"
-                android:textColor="@color/grey_500"
+                android:textColor="?android:attr/textColorSecondary"
                 android:letterSpacing="0.07" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAchievements"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="24dp" />
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/tvRecentAchievementsEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="24dp"
+                android:text="@string/recent_achievements_empty"
+                android:textSize="13sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:visibility="gone" />
 
         </LinearLayout>
     </ScrollView>
