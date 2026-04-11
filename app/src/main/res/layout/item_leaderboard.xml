@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Single leaderboard line: rank (or medal), circle avatar (emoji or initials), name, XP.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,7 +19,7 @@
         android:text="1"
         android:textSize="13sp"
         android:textStyle="bold"
-        android:textColor="@color/grey_400"
+        android:textColor="?attr/colorOnSurface"
         android:gravity="center"
         android:layout_marginEnd="12dp" />
 
@@ -46,7 +49,7 @@
         android:layout_weight="1"
         android:text="Sophie R."
         android:textSize="13sp"
-        android:textColor="@color/grey_800" />
+        android:textColor="?attr/colorOnSurface" />
 
     <!-- Points -->
     <TextView
