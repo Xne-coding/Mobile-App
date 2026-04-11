@@ -1,5 +1,10 @@
 package com.questlearn;
 
+/*
+ * OnboardingSlideFragment — single carousel page: big emoji, title, description,
+ * and a soft coloured card. Arguments come from OnboardingAdapter.
+ */
+
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
