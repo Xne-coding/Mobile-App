@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Registration: back + title bar, then name, email, password, confirm, submit.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/createAccountRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="?android:attr/colorBackground">
 
+    <!-- Toolbar row -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="16dp">
+        android:paddingHorizontal="16dp"
+        android:background="?attr/colorSurface">
 
         <ImageButton
             android:id="@+id/btnBack"
@@ -19,6 +25,7 @@
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_arrow_back"
+            app:tint="?attr/colorOnSurface"
             android:contentDescription="Back" />
 
         <TextView
@@ -28,7 +35,7 @@
             android:text="Create Account"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/grey_900" />
+            android:textColor="?attr/colorOnSurface" />
     </LinearLayout>
 
     <View
@@ -36,6 +43,7 @@
         android:layout_height="1dp"
         android:background="@color/grey_200" />
 
+    <!-- TextInputLayouts for name, email, passwords, then create button -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -53,7 +61,7 @@
                 android:text="Create your NTU account"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/grey_900"
+                android:textColor="?attr/colorOnSurface"
                 android:layout_marginBottom="16dp" />
 
             <com.google.android.material.textfield.TextInputLayout
