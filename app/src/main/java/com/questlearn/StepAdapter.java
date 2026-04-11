@@ -1,5 +1,7 @@
 package com.questlearn;
 
+/** Vertical list of steps inside ChallengeDetailActivity (numbered circles + text). */
+
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
