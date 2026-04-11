@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  One badge tile in the profile grid: coloured circle + emoji + short name under it.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -29,7 +32,7 @@
         android:layout_marginTop="4dp"
         android:text="Badge"
         android:textSize="9sp"
-        android:textColor="@color/grey_600"
+            android:textColor="?android:attr/textColorSecondary"
         android:gravity="center"
         android:maxLines="2"
         android:lineSpacingMultiplier="1.2" />
