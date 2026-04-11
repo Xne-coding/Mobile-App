@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- item_challenge.xml -->
+<!--
+  One challenge row on Home: coloured edge stripe, title, location, distance, XP chip, progress bar.
+-->
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +19,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- Accent stripe -->
+        <!-- Left colour bar — Java sets this to match challenge theme -->
         <View
             android:id="@+id/accentStripe"
             android:layout_width="4dp"
@@ -46,7 +48,7 @@
                     android:text="Clifton Quest: Library Discovery"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_900"
+                    android:textColor="?attr/colorOnSurface"
                     android:paddingEnd="8dp"
                     android:fontFamily="sans-serif"
                     android:maxLines="2"
@@ -79,7 +81,7 @@
                     android:layout_weight="1"
                     android:text="📍 Clifton Library"
                     android:textSize="11sp"
-                    android:textColor="@color/grey_500" />
+                    android:textColor="?android:attr/textColorSecondary" />
 
                 <TextView
                     android:id="@+id/tvDistance"
@@ -87,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:text="80m away"
                     android:textSize="11sp"
-                    android:textColor="@color/grey_500" />
+                    android:textColor="?android:attr/textColorSecondary" />
             </LinearLayout>
 
             <!-- Progress row -->
@@ -116,7 +118,7 @@
                     android:text="65%"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="@color/grey_600"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:gravity="end" />
             </LinearLayout>
 
