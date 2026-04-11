@@ -1,5 +1,11 @@
 package com.questlearn;
 
+/*
+ * SplashActivity — first screen: short branded animation, then route the user to
+ * MainActivity if already signed in, Login if onboarding was finished, or the
+ * onboarding carousel if they're brand new.
+ */
+
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
@@ -9,15 +15,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import androidx.appcompat.app.AppCompatActivity;
-import com.questlearn.db.ProgressDbHelper;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends QuestLearnBaseActivity {
 
     private static final long SPLASH_DURATION = 2800L;
     private static final String PREFS_NAME = "questlearn_prefs";
     private static final String KEY_ONBOARDING_DONE = "onboarding_complete";
-    private static final String KEY_LOGGED_IN = "user_logged_in";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +34,30 @@ public class SplashActivity extends AppCompatActivity {
         View dot2 = findViewById(R.id.dot2);
         View dot3 = findViewById(R.id.dot3);
 
-        // Fade in content
-        content.setAlpha(0f);
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(content, "alpha", 0f, 1f);
-        fadeIn.setDuration(700);
-        fadeIn.setStartDelay(200);
-        fadeIn.setInterpolator(new AccelerateDecelerateInterpolator());
+        if (DisplayPreferences.isReduceMotion(this)) {
+            content.setAlpha(1f);
+            content.setTranslationY(0f);
+        } else {
+            content.setAlpha(0f);
+            ObjectAnimator fadeIn = ObjectAnimator.ofFloat(content, "alpha", 0f, 1f);
+            fadeIn.setDuration(700);
+            fadeIn.setStartDelay(200);
+            fadeIn.setInterpolator(new AccelerateDecelerateInterpolator());
 
-        ObjectAnimator slideUp = ObjectAnimator.ofFloat(content, "translationY", 40f, 0f);
-        slideUp.setDuration(700);
-        slideUp.setStartDelay(200);
-        slideUp.setInterpolator(new AccelerateDecelerateInterpolator());
+            ObjectAnimator slideUp = ObjectAnimator.ofFloat(content, "translationY", 40f, 0f);
+            slideUp.setDuration(700);
+            slideUp.setStartDelay(200);
+            slideUp.setInterpolator(new AccelerateDecelerateInterpolator());
 
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(fadeIn, slideUp);
-        set.start();
+            AnimatorSet set = new AnimatorSet();
+            set.playTogether(fadeIn, slideUp);
+            set.start();
+        }
 
-        // Animate loader dots
-        animateDots(dot1, dot2, dot3);
+        if (!DisplayPreferences.isReduceMotion(this)) {
+            animateDots(dot1, dot2, dot3);
+        }
 
-        // Navigate after delay
         new Handler(Looper.getMainLooper()).postDelayed(this::navigateNext, SPLASH_DURATION);
     }
 
@@ -69,12 +78,12 @@ public class SplashActivity extends AppCompatActivity {
 
     private void navigateNext() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        sanitizeLegacyDemoUser(prefs);
         boolean onboardingDone = prefs.getBoolean(KEY_ONBOARDING_DONE, false);
-        boolean loggedIn = prefs.getBoolean(KEY_LOGGED_IN, false);
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         Intent intent;
-        if (loggedIn) {
+        if (currentUser != null) {
             intent = new Intent(this, MainActivity.class);
         } else if (onboardingDone) {
             intent = new Intent(this, LoginActivity.class);
@@ -83,24 +92,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        UiTransitions.splashCrossFade(this);
         finish();
-    }
-
-    private void sanitizeLegacyDemoUser(SharedPreferences prefs) {
-        String legacyName = prefs.getString("user_name", "");
-        String legacyEmail = prefs.getString("user_email", "");
-        if ("Don Jacques Maseengo".equals(legacyName)
-                || legacyEmail.endsWith("@nottingham.ac.uk")) {
-            prefs.edit()
-                    .putBoolean(KEY_LOGGED_IN, false)
-                    .remove("remember_me")
-                    .remove("user_name")
-                    .remove("user_initials")
-                    .remove("user_email")
-                    .remove("is_guest")
-                    .apply();
-            new ProgressDbHelper(this).resetProgress();
-        }
     }
 }
