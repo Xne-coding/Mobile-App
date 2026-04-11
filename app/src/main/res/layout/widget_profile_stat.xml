@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  One stat column inside the profile stats card (XP, done, badges, rank) — light theme.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -13,7 +16,7 @@
         android:text="0"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/grey_900"
+        android:textColor="?attr/colorOnSurface"
         android:fontFamily="sans-serif" />
 
     <TextView
@@ -22,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="LABEL"
         android:textSize="9sp"
-        android:textColor="@color/grey_500"
+        android:textColor="?android:attr/textColorSecondary"
         android:letterSpacing="0.05"
         android:layout_marginTop="2dp" />
 
